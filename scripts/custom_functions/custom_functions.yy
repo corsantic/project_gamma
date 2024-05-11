@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"custom_functions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"custom_functions",
+  "parent":{
+    "name":"ProjectGama",
+    "path":"ProjectGama.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
