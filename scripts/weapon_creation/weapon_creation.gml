@@ -8,6 +8,10 @@ function CreateWeapon(_sprite = sPistol, _weapon_length = 0, _bullet_object = oR
 	cooldown = _cooldown;
 }
 
+// the player's weapon inventory
+global.PlayerWeapons = array_create(0);
+
+
 //the weapons
 global.WeaponList = {
 	pistol: new CreateWeapon(

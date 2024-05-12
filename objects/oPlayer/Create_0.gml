@@ -19,10 +19,10 @@
 
 //weapon info
 	shoot_timer = 0;
+	
+	//add weapon to player weapon inv
+	array_push(global.PlayerWeapons, global.WeaponList.pistol, global.WeaponList.shotgun, global.WeaponList.ak47);
 
-
-	weapon = global.WeaponList.pistol;
 	
-	
-	
-	
+	selected_weapon = 0;
+	weapon = global.PlayerWeapons[selected_weapon];

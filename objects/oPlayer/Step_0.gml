@@ -4,6 +4,7 @@ var _left_key = keyboard_check(ord("A"));
 var _up_key = keyboard_check(ord("W"));
 var _down_key = keyboard_check(ord("S"));
 var _shoot_key = mouse_check_button(mb_left);
+var _swap_key_pressed = mouse_check_button_pressed(mb_right);
 
 
 #region player movement
@@ -41,16 +42,12 @@ var _shoot_key = mouse_check_button(mb_left);
 	depth = -bbox_bottom;
 	
 #endregion
-
-
 #region player aiming
 	center_y = y + center_y_offset;
 	center_x = x + center_x_offset;
 	
 	aim_direction = point_direction(center_x, center_y, mouse_x, mouse_y);
 #endregion
-
-
 #region sprite control
 	//make sure the player is facing the correct direction
 	var _degree = 90;
@@ -73,6 +70,22 @@ var _shoot_key = mouse_check_button(mb_left);
 	}
 #endregion
 
+#region weapon swapping
+	var _playerWeapons = global.PlayerWeapons;
+	
+	//cycle through weapons
+	if(_swap_key_pressed){
+	
+		//change the selection and wrap around
+		selected_weapon++;
+		
+		if(selected_weapon >= array_length(_playerWeapons)) { selected_weapon = 0;}
+		
+		weapon = _playerWeapons[selected_weapon];
+	}
+	
+
+#endregion
 
 #region shoot the weapon
 if(shoot_timer > 0) { shoot_timer--; }
