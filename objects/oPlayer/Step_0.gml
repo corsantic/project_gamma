@@ -44,8 +44,8 @@ var _shoot_key = mouse_check_button(mb_left);
 
 
 #region player aiming
-	center_y = y + center_y_offset;//set in step event
-	center_x = x + center_x_offset;//set in step event
+	center_y = y + center_y_offset;
+	center_x = x + center_x_offset;
 	
 	aim_direction = point_direction(center_x, center_y, mouse_x, mouse_y);
 #endregion
@@ -75,15 +75,22 @@ var _shoot_key = mouse_check_button(mb_left);
 
 
 #region shoot the weapon
-if _shoot_key
+if(shoot_timer > 0) { shoot_timer--; }
+
+if(_shoot_key && shoot_timer <= 0)
 {
-	//create the bullet
-	var _bullet_instance = instance_create_depth(x, center_y, depth - 100, bullet_obj);
+	//reset the timer
+	shoot_timer = shoot_cooldown;
+	//shooting
+		//create the bullet
+		var _x_offset = lengthdir_x(weapon_lenght + weapon_offset_distance, aim_direction);
+		var _y_offset = lengthdir_y(weapon_lenght + weapon_offset_distance, aim_direction);
+		var _bullet_instance = instance_create_depth(center_x + _x_offset, center_y + _y_offset , depth - 100, bullet_obj);
 	
-	//change the bullet's direction
-	with(_bullet_instance)
-	{
-		dir = other.aim_direction;		
-	}		
+		//change the bullet's direction
+		with(_bullet_instance)
+		{
+			dir = other.aim_direction;		
+		}		
 }
 #endregion

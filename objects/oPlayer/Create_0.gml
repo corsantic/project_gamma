@@ -8,7 +8,7 @@
 	center_y_offset = -4;
 	center_x_offset = 4;
 	
-	weapon_offset_distance = 3;
+	weapon_offset_distance = 4;
 	aim_direction = 0;
 
 
@@ -18,5 +18,8 @@
 
 
 //weapon info
-	bullet_obj = oRegularBullet;
+	shoot_timer = 0;
+	shoot_cooldown = 9;// ex: 9 frame
 	
+	bullet_obj = oRegularBullet;
+	weapon_lenght = sprite_get_bbox_right(sShotgun) - sprite_get_xoffset(sShotgun);
