@@ -19,7 +19,10 @@
 
 //weapon info
 	shoot_timer = 0;
-	shoot_cooldown = 9;// ex: 9 frame
+
+
+	weapon = global.WeaponList.pistol;
 	
-	bullet_obj = oRegularBullet;
-	weapon_lenght = sprite_get_bbox_right(sShotgun) - sprite_get_xoffset(sShotgun);
+	
+	
+	

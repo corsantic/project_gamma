@@ -80,12 +80,12 @@ if(shoot_timer > 0) { shoot_timer--; }
 if(_shoot_key && shoot_timer <= 0)
 {
 	//reset the timer
-	shoot_timer = shoot_cooldown;
+	shoot_timer = weapon.cooldown;
 	//shooting
 		//create the bullet
-		var _x_offset = lengthdir_x(weapon_lenght + weapon_offset_distance, aim_direction);
-		var _y_offset = lengthdir_y(weapon_lenght + weapon_offset_distance, aim_direction);
-		var _bullet_instance = instance_create_depth(center_x + _x_offset, center_y + _y_offset , depth - 100, bullet_obj);
+		var _x_offset = lengthdir_x(weapon.length + weapon_offset_distance, aim_direction);
+		var _y_offset = lengthdir_y(weapon.length + weapon_offset_distance, aim_direction);
+		var _bullet_instance = instance_create_depth(center_x + _x_offset, center_y + _y_offset, depth - 100, weapon.bullet);
 	
 		//change the bullet's direction
 		with(_bullet_instance)

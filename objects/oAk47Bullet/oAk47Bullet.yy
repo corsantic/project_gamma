@@ -1,18 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"oRegularBullet",
+  "%Name":"oAk47Bullet",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oRegularBullet",
+  "name":"oAk47Bullet",
   "overriddenProperties":[],
   "parent":{
     "name":"Bullets",
     "path":"folders/Guns/Bullets.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oRegularBullet",
+    "path":"objects/oRegularBullet/oRegularBullet.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,9 +34,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPellet",
-    "path":"sprites/sPellet/sPellet.yy",
+    "name":"sRegularBullet",
+    "path":"sprites/sRegularBullet/sRegularBullet.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"sPistolBullet",
+    "path":"sprites/sPistolBullet/sPistolBullet.yy",
+  },
   "visible":true,
 }
