@@ -98,12 +98,26 @@ if(_shoot_key && shoot_timer <= 0)
 		//create the bullet
 		var _x_offset = lengthdir_x(weapon.length + weapon_offset_distance, aim_direction);
 		var _y_offset = lengthdir_y(weapon.length + weapon_offset_distance, aim_direction);
-		var _bullet_instance = instance_create_depth(center_x + _x_offset, center_y + _y_offset, depth - 100, weapon.bullet);
-	
-		//change the bullet's direction
-		with(_bullet_instance)
+		
+		var _spread = weapon.spread;
+		var _spread_div = _spread / max(weapon.bullet_num - 1, 1);
+		
+		//create the correct number of bullets
+		for(var _i = 0; _i < weapon.bullet_num; _i++)
 		{
-			dir = other.aim_direction;		
-		}		
+			
+			var _bullet_instance = instance_create_depth(center_x + _x_offset, center_y + _y_offset, depth - 100, weapon.bullet);
+	
+			//change the bullet's direction
+			with(_bullet_instance)
+			{
+				dir = other.aim_direction - _spread/2 + _spread_div*_i;		
+				
+				// turn the bullet to correct direction at creation if necessary
+				if(dir_fix == true){ image_angle = dir; }
+			}
+			
+		}
+		
 }
 #endregion

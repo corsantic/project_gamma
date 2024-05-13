@@ -1,8 +1,12 @@
+event_inherited();
+
 dir = 0;
-spd = 2;
+spd = 4;
 x_speed = 0;
 y_speed = 0;
 
 //cleanup
-max_dist = 400;
+dir_fix = false;
+max_dist = 48;
 destroy = false;
+

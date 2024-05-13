@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
-//change properties
-spd = 4;
-max_dist = 200;
+spd = .5;
+dir = 0;
+x_speed = 0;
+y_speed = 0;
+

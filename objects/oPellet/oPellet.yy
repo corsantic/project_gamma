@@ -1,20 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oPistolBullet",
+  "%Name":"oPellet",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oPistolBullet",
+  "name":"oPellet",
   "overriddenProperties":[],
   "parent":{
     "name":"Bullets",
     "path":"folders/Guns/Bullets.yy",
   },
   "parentObjectId":{
-    "name":"oPellet",
-    "path":"objects/oPellet/oPellet.yy",
+    "name":"oDamageEnemy",
+    "path":"objects/oDamageEnemy/oDamageEnemy.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPistolBullet",
-    "path":"sprites/sPistolBullet/sPistolBullet.yy",
+    "name":"sPellet",
+    "path":"sprites/sPellet/sPellet.yy",
   },
   "spriteMaskId":null,
   "visible":true,

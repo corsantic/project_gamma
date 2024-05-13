@@ -13,8 +13,8 @@
     "path":"folders/Guns/Bullets.yy",
   },
   "parentObjectId":{
-    "name":"oRegularBullet",
-    "path":"objects/oRegularBullet/oRegularBullet.yy",
+    "name":"oPellet",
+    "path":"objects/oPellet/oPellet.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
