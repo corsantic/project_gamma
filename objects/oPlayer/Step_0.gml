@@ -69,7 +69,6 @@ var _swap_key_pressed = mouse_check_button_pressed(mb_right);
 		sprite_index = sprites[face];
 	}
 #endregion
-
 #region weapon swapping
 	var _playerWeapons = global.PlayerWeapons;
 	
@@ -86,7 +85,6 @@ var _swap_key_pressed = mouse_check_button_pressed(mb_right);
 	
 
 #endregion
-
 #region shoot the weapon
 if(shoot_timer > 0) { shoot_timer--; }
 

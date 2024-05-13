@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oZombie",
+  "%Name":"oSkeleton",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oZombie",
+  "name":"oSkeleton",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
@@ -34,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sZombie",
-    "path":"sprites/sZombie/sZombie.yy",
+    "name":"sSkeletonWalking",
+    "path":"sprites/sSkeletonWalking/sSkeletonWalking.yy",
   },
   "spriteMaskId":null,
   "visible":true,
