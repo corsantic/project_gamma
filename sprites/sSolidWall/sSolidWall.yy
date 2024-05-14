@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"MapObjects",
+    "path":"folders/MapObjects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

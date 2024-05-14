@@ -6,8 +6,8 @@
   "name":"oSolidWall",
   "overriddenProperties":[],
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"MapObjects",
+    "path":"folders/MapObjects.yy",
   },
   "parentObjectId":{
     "name":"oWall",

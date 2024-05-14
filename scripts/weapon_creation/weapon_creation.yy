@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"weapon_creation",
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

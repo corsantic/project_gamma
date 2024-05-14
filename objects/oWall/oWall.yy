@@ -6,8 +6,8 @@
   "name":"oWall",
   "overriddenProperties":[],
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"MapObjects",
+    "path":"folders/MapObjects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

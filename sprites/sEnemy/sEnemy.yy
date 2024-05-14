@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"sEnemy",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":11,
   "bbox_left":0,
   "bbox_right":13,
