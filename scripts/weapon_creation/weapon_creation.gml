@@ -27,7 +27,7 @@ global.WeaponList = {
 	shotgun: new CreateWeapon(
 		sShotgun,
 		sprite_get_bbox_right(sShotgun) - sprite_get_xoffset(sShotgun),
-		oPellet,
+		oMainPellet,
 		20,
 		7,
 		70

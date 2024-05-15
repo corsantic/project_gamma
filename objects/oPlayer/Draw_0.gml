@@ -14,3 +14,6 @@
 	{
 		draw_player_weapon();
 	}
+//draw hp as number
+	draw_text(x, y, string(hp));
+

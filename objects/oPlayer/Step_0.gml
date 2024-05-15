@@ -3,6 +3,7 @@ var _right_key = keyboard_check(ord("D"));
 var _left_key = keyboard_check(ord("A"));
 var _up_key = keyboard_check(ord("W"));
 var _down_key = keyboard_check(ord("S"));
+var _space_key = keyboard_check_pressed(vk_space);
 var _shoot_key = mouse_check_button(mb_left);
 var _swap_key_pressed = mouse_check_button_pressed(mb_right);
 
@@ -41,6 +42,18 @@ var _swap_key_pressed = mouse_check_button_pressed(mb_right);
 	//depth
 	depth = -bbox_bottom;
 	
+	//dash
+	if(_space_key)
+	{
+		//todo: will change this
+		x += x_speed * 3;
+		y += y_speed * 3;
+	
+	}
+	
+#endregion
+#region get damaged
+	get_damaged(oDamagePlayer, true);
 #endregion
 #region player aiming
 	center_y = y + center_y_offset;

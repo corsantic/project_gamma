@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oAk47Bullet",
+  "%Name":"oDamagePlayerTest",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oAk47Bullet",
+  "name":"oDamagePlayerTest",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bullets",
-    "path":"folders/Guns/Bullets.yy",
+    "name":"Enemies",
+    "path":"folders/Enemies.yy",
   },
   "parentObjectId":{
-    "name":"oMainPellet",
-    "path":"objects/oMainPellet/oMainPellet.yy",
+    "name":"oDamagePlayer",
+    "path":"objects/oDamagePlayer/oDamagePlayer.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,12 +33,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sRegularBullet",
-    "path":"sprites/sRegularBullet/sRegularBullet.yy",
+    "name":"sDamagePlayerTest",
+    "path":"sprites/sDamagePlayerTest/sDamagePlayerTest.yy",
   },
-  "spriteMaskId":{
-    "name":"sPistolBullet",
-    "path":"sprites/sPistolBullet/sPistolBullet.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

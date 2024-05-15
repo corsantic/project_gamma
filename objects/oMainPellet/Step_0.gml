@@ -6,6 +6,9 @@
 	y += y_speed;
 	
 //cleanup
+	//hit confirm destroy
+	if (hit_confirm && enemy_destroy) { destroy = true; }
+
 	//destroy
 	if(destroy == true) { instance_destroy(); }
 	

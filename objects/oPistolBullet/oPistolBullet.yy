@@ -13,8 +13,8 @@
     "path":"folders/Guns/Bullets.yy",
   },
   "parentObjectId":{
-    "name":"oPellet",
-    "path":"objects/oPellet/oPellet.yy",
+    "name":"oMainPellet",
+    "path":"objects/oMainPellet/oMainPellet.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

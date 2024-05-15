@@ -1,20 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"oAk47Bullet",
+  "%Name":"oCrate",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oAk47Bullet",
+  "name":"oCrate",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bullets",
-    "path":"folders/Guns/Bullets.yy",
+    "name":"MapObjects",
+    "path":"folders/MapObjects.yy",
   },
   "parentObjectId":{
-    "name":"oMainPellet",
-    "path":"objects/oMainPellet/oMainPellet.yy",
+    "name":"oSolidWall",
+    "path":"objects/oSolidWall/oSolidWall.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,12 +35,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sRegularBullet",
-    "path":"sprites/sRegularBullet/sRegularBullet.yy",
+    "name":"sCrate",
+    "path":"sprites/sCrate/sCrate.yy",
   },
-  "spriteMaskId":{
-    "name":"sPistolBullet",
-    "path":"sprites/sPistolBullet/sPistolBullet.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

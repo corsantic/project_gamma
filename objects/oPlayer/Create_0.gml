@@ -1,3 +1,7 @@
+//damage setup
+	get_damaged_create(20, true);
+
+
 //variables for movement
 	move_direction = 0;
 	move_speed = 2;

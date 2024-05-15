@@ -9,4 +9,4 @@ y_speed = 0;
 dir_fix = false;
 max_dist = 48;
 destroy = false;
-
+enemy_destroy = true;
