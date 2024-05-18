@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"sRegularBullet",
   "bboxMode":0,
-  "bbox_bottom":0,
+  "bbox_bottom":2,
   "bbox_left":0,
   "bbox_right":4,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":1,
   "gridY":1,
-  "height":1,
+  "height":3,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"704733ca-2d8b-4b42-bb63-f80cc6d90780","blendMode":0,"displayName":"default","isLocked":false,"name":"704733ca-2d8b-4b42-bb63-f80cc6d90780","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

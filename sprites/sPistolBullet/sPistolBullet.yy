@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"sPistolBullet",
   "bboxMode":0,
-  "bbox_bottom":1,
+  "bbox_bottom":2,
   "bbox_left":0,
-  "bbox_right":1,
+  "bbox_right":2,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":2,
+  "height":3,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"1e446941-38ee-4ad9-ba23-32d9147acf69","blendMode":0,"displayName":"default","isLocked":false,"name":"1e446941-38ee-4ad9-ba23-32d9147acf69","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":2,
+  "width":3,
 }
