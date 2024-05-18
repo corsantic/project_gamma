@@ -64,6 +64,7 @@
     {"id":{"name":"sSkeletonDeath","path":"sprites/sSkeletonDeath/sSkeletonDeath.yy",},},
     {"id":{"name":"sSkeletonWalking","path":"sprites/sSkeletonWalking/sSkeletonWalking.yy",},},
     {"id":{"name":"sSolidWall","path":"sprites/sSolidWall/sSolidWall.yy",},},
+    {"id":{"name":"sTileSetOutside_2","path":"sprites/sTileSetOutside_2/sTileSetOutside_2.yy",},},
     {"id":{"name":"sTileSetOutside","path":"sprites/sTileSetOutside/sTileSetOutside.yy",},},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
     {"id":{"name":"tilesOutside","path":"tilesets/tilesOutside/tilesOutside.yy",},},
