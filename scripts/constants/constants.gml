@@ -1,0 +1,10 @@
+enum ENEMY_STATE{
+	CHASING,
+	PAUSE
+}
+
+enum BULLET_STATE
+{
+	NOT_MOVING,
+	SHOOTING
+}
