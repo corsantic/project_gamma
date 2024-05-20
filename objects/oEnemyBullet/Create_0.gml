@@ -13,4 +13,5 @@ state = BULLET_STATE.NOT_MOVING;
 // cleanup
 destroy = false;
 player_destroy = true;
+is_spinning = true;
 

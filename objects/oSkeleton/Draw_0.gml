@@ -3,4 +3,8 @@
 
 
 //draw hp
-	draw_text(x, y, string(hp));
+	var _hp_percent = hp / max_hp;
+	var _hp_image = _hp_percent *  (sprite_get_number(sEnemyHealth) -1); //get number of the sprites in 
+	draw_sprite(sEnemyHealth, _hp_image, x, y - sprite_height - 1 );
+	
+

@@ -14,7 +14,6 @@ switch(state){
 	
 	//shoot / travel
 	case BULLET_STATE.SHOOTING:
-		
 		//movement 
 		x_spd = lengthdir_x(spd, dir);
 		y_spd = lengthdir_y(spd, dir);
@@ -30,6 +29,12 @@ switch(state){
 	
 	
 }
+
+// spin bullets with image angle
+	if (is_spinning)
+	{	
+		image_angle = image_angle + 90 / 4; 
+	}
 	
 	
 #region cleanup
@@ -41,7 +46,7 @@ switch(state){
 
 
 	//player collision
-	if(hit_confirm && player_destroy){ destroy = true; }
+	if(hit_confirm && player_destroy) { destroy = true; }
 
 	//destroy
 	if (destroy) { instance_destroy(); }

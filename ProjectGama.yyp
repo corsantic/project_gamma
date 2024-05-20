@@ -51,6 +51,7 @@
     {"id":{"name":"sDamagePlayerTest","path":"sprites/sDamagePlayerTest/sDamagePlayerTest.yy",},},
     {"id":{"name":"sEnemy","path":"sprites/sEnemy/sEnemy.yy",},},
     {"id":{"name":"sEnemyBullet","path":"sprites/sEnemyBullet/sEnemyBullet.yy",},},
+    {"id":{"name":"sEnemyHealth","path":"sprites/sEnemyHealth/sEnemyHealth.yy",},},
     {"id":{"name":"sPellet","path":"sprites/sPellet/sPellet.yy",},},
     {"id":{"name":"sPistol","path":"sprites/sPistol/sPistol.yy",},},
     {"id":{"name":"sPistolBullet","path":"sprites/sPistolBullet/sPistolBullet.yy",},},

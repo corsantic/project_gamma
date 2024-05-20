@@ -27,7 +27,7 @@ function draw_player_weapon()
 	/// @param {real} [_hp]=10 Hp of the enemy
 	function get_damaged_create(_hp = 10, _iframes = false)
 	{
-		
+		max_hp = _hp;
 		hp = _hp;
 		//get the iframes
 		if(_iframes == true)
@@ -79,6 +79,9 @@ function draw_player_weapon()
 					image_alpha = 0;
 				}
 			}
+			//clamp hp
+			hp = clamp(hp, 0, max_hp);
+		
 			exit;
 		}
 		//make sure the iframe blinking stops
@@ -153,5 +156,10 @@ function draw_player_weapon()
 			}
 
 		#endregion
+		
+		
+		//clamp hp
+		hp = clamp(hp, 0, max_hp);
+		
 
 	}
