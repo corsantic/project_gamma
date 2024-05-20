@@ -10,6 +10,12 @@ y_speed = 0;
 face = 1;
 
 //state machine 
-state = ENEMY_STATE.PAUSE;
+state = ENEMY_STATE.CHASING;
+	//shooting state
+	cooldown_time = 4*60;
+	shoot_timer = 0;
+	windup_time = 60;
+	recover_time = 45;
+	bullet_instance = noone;
 
 

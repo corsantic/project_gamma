@@ -10,7 +10,6 @@ switch(state){
 		
 		// set depth to make myself more visible
 		depth = -y - 50;
-		state=  1;
 	break;
 	
 	//shoot / travel
@@ -31,3 +30,23 @@ switch(state){
 	
 	
 }
+	
+	
+#region cleanup
+	//out of room bounds
+	if(bbox_right < 0 || bbox_left > room_width || bbox_bottom < 0 || bbox_top > room_height)
+	{
+		destroy = true;
+	}
+
+
+	//player collision
+	if(hit_confirm && player_destroy){ destroy = true; }
+
+	//destroy
+	if (destroy) { instance_destroy(); }
+	
+	//wall collision
+	if(place_meeting(x,y, oSolidWall)) { destroy = true;}
+	
+#endregion

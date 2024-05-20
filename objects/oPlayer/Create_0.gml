@@ -11,6 +11,8 @@
 //sprite control
 	center_y_offset = -4;
 	center_x_offset = 4;
+	center_y = y + center_y_offset;
+	center_x = x + center_x_offset;
 	
 	weapon_offset_distance = 4;
 	aim_direction = 0;

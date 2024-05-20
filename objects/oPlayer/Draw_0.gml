@@ -16,4 +16,5 @@
 	}
 //draw hp as number
 	draw_text(x, y, string(hp));
+	//draw_text(x, y+20, string(instance_count));
 

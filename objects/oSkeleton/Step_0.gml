@@ -12,10 +12,23 @@ switch(state)
 			
 			//set the correct speed 
 			spd = chase_spd;
+			
+			//transition to shooting state;
+			shoot_timer++;
+			
+			if( shoot_timer > cooldown_time)
+			{
+				//set shoot state
+				state = ENEMY_STATE.PAUSE_AND_SHOOT;
+				//reset timer
+				shoot_timer = 0;
+			
+			}
+			
 	
 	break;
 	
-	case ENEMY_STATE.PAUSE:
+	case ENEMY_STATE.PAUSE_AND_SHOOT:
 		//pause enemy
 			//direction
 			if(instance_exists(oPlayer))
@@ -28,6 +41,32 @@ switch(state)
 			
 			//stop animating / manually set the image index
 			image_index = 0;
+			
+			//shoot a bullet
+				shoot_timer++;
+			
+				//create bullet
+				if(shoot_timer == 1)
+				{
+					
+					bullet_instance = instance_create_depth(x, y, depth, oEnemyBullet);
+
+				}
+				
+				//shoot the bullet after the windup time is over
+				if(shoot_timer == windup_time && instance_exists(bullet_instance))
+				{
+					//set out bullet's state to shooting state
+					bullet_instance.state = BULLET_STATE.SHOOTING;
+				}
+				
+				if (shoot_timer > windup_time + recover_time)
+				{
+					// go back to chasing player
+					state = ENEMY_STATE.CHASING;
+					//reset the timer so we can use it again					
+					shoot_timer = 0;
+				}
 		
 	break;
 }
