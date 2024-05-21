@@ -61,6 +61,7 @@
     {"id":{"name":"sPlayerDashDisplayTest","path":"sprites/sPlayerDashDisplayTest/sPlayerDashDisplayTest.yy",},},
     {"id":{"name":"sPlayerDownIdle","path":"sprites/sPlayerDownIdle/sPlayerDownIdle.yy",},},
     {"id":{"name":"sPlayerDownRun","path":"sprites/sPlayerDownRun/sPlayerDownRun.yy",},},
+    {"id":{"name":"sPlayerHp","path":"sprites/sPlayerHp/sPlayerHp.yy",},},
     {"id":{"name":"sPlayerLeftIdle","path":"sprites/sPlayerLeftIdle/sPlayerLeftIdle.yy",},},
     {"id":{"name":"sPlayerLeftRun","path":"sprites/sPlayerLeftRun/sPlayerLeftRun.yy",},},
     {"id":{"name":"sPlayerRightIdle","path":"sprites/sPlayerRightIdle/sPlayerRightIdle.yy",},},
