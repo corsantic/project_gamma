@@ -5,6 +5,6 @@
 	#region death
 		if(hp <= 0 )
 		{
-			instance_destroy();
+			state = ENEMY_STATE.DEATH;
 		}
 	#endregion

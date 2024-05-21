@@ -109,6 +109,10 @@ function draw_player_weapon()
 						{
 							//get a damage object instance from the list
 							var _instance = ds_list_find_value(_instance_list, _i);
+							
+							//check oEnemyParent collision damage because i dont want to damage player while playing death animation
+							var _is_enemy_and_is_death = (object_get_parent(_instance.object_index) == oEnemyParent && _instance.hp <= 0);
+							
 							//check if this instance is already in the damage list
 							if(_iframes == true || ds_list_find_index(damage_list, _instance) == -1)
 							{	
@@ -118,12 +122,15 @@ function draw_player_weapon()
 									ds_list_add(damage_list, _instance);
 								}
 								
-								//take damage from specific instance
-								hp -= _instance.damage;
-								_hit_confirm = true;
+								if(!_is_enemy_and_is_death)
+								{
+									//take damage from specific instance
+									hp -= _instance.damage;
+									_hit_confirm = true;
 								
-								//tell the damage instance to destroy itself
-								_instance.hit_confirm= true;				
+									//tell the damage instance to destroy itself
+									_instance.hit_confirm= true;				
+								}
 							}
 						}
 						// set iframes if we were hit

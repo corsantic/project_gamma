@@ -26,13 +26,12 @@ switch(state)
 					shoot_timer++;
 				}
 			
-				if( shoot_timer > cooldown_time)
+				if(shoot_timer > cooldown_time)
 				{
 					//set shoot state
 					state = ENEMY_STATE.PAUSE_AND_SHOOT;
 					//reset timer
 					shoot_timer = 0;
-			
 				}
 			
 	
@@ -85,6 +84,25 @@ switch(state)
 				}
 		#endregion
 	break;
+	
+	
+	case ENEMY_STATE.DEATH:
+		#region death of the enemy play animation
+			
+			//set the correct speed
+            spd = 0;
+			
+			sprite_index = sSkeletonDeath;
+			mask_index = -1;
+			
+			if (image_index >= image_number - 1) {
+			    instance_destroy();
+			}
+			
+		#endregion
+	break;
+	
+	
 }
 
 
