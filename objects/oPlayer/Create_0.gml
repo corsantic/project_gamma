@@ -9,6 +9,14 @@
 	y_speed = 0;
 
 //sprite control
+	//dash
+		dash_speed = 12;
+		dash_duration = 0.07 * game_get_speed(gamespeed_fps);
+		is_dashing = false;
+		dash_time = 0;
+		dash_cooldown = 0.7 * game_get_speed(gamespeed_fps);
+		current_cooldown = 0;
+
 	center_y_offset = -4;
 	center_x_offset = 4;
 	center_y = y + center_y_offset;

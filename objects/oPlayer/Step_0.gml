@@ -3,9 +3,10 @@ var _right_key = keyboard_check(ord("D"));
 var _left_key = keyboard_check(ord("A"));
 var _up_key = keyboard_check(ord("W"));
 var _down_key = keyboard_check(ord("S"));
-var _space_key = keyboard_check_pressed(vk_space);
+var _space_key_pressed = keyboard_check_pressed(vk_space);
 var _shoot_key = mouse_check_button(mb_left);
 var _swap_key_pressed = mouse_check_button_pressed(mb_right);
+
 
 
 #region player movement
@@ -34,22 +35,49 @@ var _swap_key_pressed = mouse_check_button_pressed(mb_right);
 		y_speed = 0;
 	}
 	
-	// move the player
-	x += x_speed;
-	y += y_speed;
+	//dash
+	if(_space_key_pressed && !is_dashing && current_cooldown <= 0)
+	{
+		is_dashing = true;
+		dash_time = dash_duration;
+		current_cooldown = dash_cooldown;
+	}
 	
+	// Update dash status
+	if (is_dashing) {
+	    dash_time -= 1;
+	    if (dash_time <= 0) {
+	        is_dashing = false;
+	    }
+	}
+	if (current_cooldown > 0) {
+		current_cooldown -= 1;
+	}
+
+
+	if(is_dashing){
+	    var _dash_vector_x = lengthdir_x(dash_speed, move_direction);
+	    var _dash_vector_y = lengthdir_y(dash_speed, move_direction);
+		//collision check for dashing
+		if (!place_meeting(x + _dash_vector_x, y, oWall) &&  !place_meeting(x, y + _dash_vector_y, oWall))
+		{
+		    x += _dash_vector_x;
+		    y += _dash_vector_y;
+
+		}
+
+	}
+	else{
+		// move the player
+		x += x_speed;
+		y += y_speed;
+	}
+	
+
 	
 	//depth
 	depth = -bbox_bottom;
 	
-	//dash
-	if(_space_key)
-	{
-		//todo: will change this
-		x += x_speed * 3;
-		y += y_speed * 3;
-	
-	}
 	
 #endregion
 #region get damaged

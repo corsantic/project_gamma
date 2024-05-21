@@ -15,6 +15,11 @@
 		draw_player_weapon();
 	}
 //draw hp as number
-	draw_text(x, y, string(hp));
-	//draw_text(x, y+20, string(instance_count));
+	
+	//draw_text(x, y+20, string(current_cooldown));
+	var _cd_percent = (dash_cooldown - current_cooldown) / dash_cooldown;
+	draw_text(x, y, string(_cd_percent));
+	var _dash_image = _cd_percent *  (sprite_get_number(sPlayerDashCd) -1); //get number of the sprites in 
+	draw_sprite(sPlayerDashCd, _dash_image, x,  y - sprite_height - 1);
+	
 
