@@ -11,6 +11,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"GameControl","folderPath":"folders/GameControl.yy","name":"GameControl","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Guns","folderPath":"folders/Guns.yy","name":"Guns","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Bullets","folderPath":"folders/Guns/Bullets.yy","name":"Bullets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"MapObjects","folderPath":"folders/MapObjects.yy","name":"MapObjects","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -23,7 +24,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"ProjectGama",
   "resources":[
@@ -36,6 +37,7 @@
     {"id":{"name":"oDamagePlayerTest","path":"objects/oDamagePlayerTest/oDamagePlayerTest.yy",},},
     {"id":{"name":"oEnemyBullet","path":"objects/oEnemyBullet/oEnemyBullet.yy",},},
     {"id":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},},
+    {"id":{"name":"oGameOverScreen","path":"objects/oGameOverScreen/oGameOverScreen.yy",},},
     {"id":{"name":"oMainPellet","path":"objects/oMainPellet/oMainPellet.yy",},},
     {"id":{"name":"oPistolBullet","path":"objects/oPistolBullet/oPistolBullet.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},

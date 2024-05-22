@@ -83,6 +83,8 @@ var _swap_key_pressed = mouse_check_button_pressed(mb_right);
 #region get damaged
 	get_damaged(oDamagePlayer, true);
 #endregion
+
+
 #region player aiming
 	center_y = y + center_y_offset;
 	center_x = x + center_x_offset;
@@ -159,4 +161,11 @@ if(_shoot_key && shoot_timer <= 0)
 		}
 		
 }
+#endregion
+
+#region death / gameover
+	if(hp <= 0)
+	{
+		instance_destroy();
+	}
 #endregion
