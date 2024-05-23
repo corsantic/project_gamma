@@ -103,7 +103,7 @@ var _swap_key_pressed = mouse_check_button_pressed(mb_right);
 	if(x_speed == 0 && y_speed == 0)
 	{
 		//animate 
-		image_index = 0;
+		//image_index = 0;
 	
 		sprite_index = sprites_idle[face];
 	}
