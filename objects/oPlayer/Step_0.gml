@@ -1,11 +1,11 @@
 //get inputs
-var _right_key = keyboard_check(ord("D"));
-var _left_key = keyboard_check(ord("A"));
-var _up_key = keyboard_check(ord("W"));
-var _down_key = keyboard_check(ord("S"));
-var _space_key_pressed = keyboard_check_pressed(vk_space);
-var _shoot_key = mouse_check_button(mb_left);
-var _swap_key_pressed = mouse_check_button_pressed(mb_right);
+var _right_key = global.right_key;
+var _left_key =	global.left_key;
+var _up_key = global.up_key;
+var _down_key = global.down_key;
+var _space_key_pressed = global.space_key_pressed;
+var _shoot_key = global.shoot_key;
+var _swap_key_pressed = global.swap_key_pressed;
 
 
 
@@ -165,7 +165,11 @@ if(_shoot_key && shoot_timer <= 0)
 
 #region death / gameover
 	if(hp <= 0)
-	{
+	{	
+		//create the game over
+		instance_create_depth(0, 0, -10000,oGameOverScreen);
+		
+		//destroy ourself
 		instance_destroy();
 	}
 #endregion
