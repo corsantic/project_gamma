@@ -4,8 +4,23 @@ height = 104;
 op_border = 8;
 op_space  = 16;
 
-options = ["Start Game", "Settings", "Quit Game"];
+pos = 0;
+mx_prev = mouse_x;
+my_prev = mouse_y;
+//main menu
+options[MENU_LEVEL.MAIN, MAIN_MENU.START_GAME] = "Start Game";
+options[MENU_LEVEL.MAIN, MAIN_MENU.SETTINGS] = "Settings";
+options[MENU_LEVEL.MAIN, MAIN_MENU.QUIT] = "Quit Game";
 
-op_length = array_length(options);
+
+//settings menu
+options[MENU_LEVEL.SETTINGS, SETTINGS_MENU.WINDOW_SIZE] = "Window Size";
+options[MENU_LEVEL.SETTINGS, SETTINGS_MENU.BRIGHTNESS] = "Brightness";
+options[MENU_LEVEL.SETTINGS, SETTINGS_MENU.CONTROL] = "Controls";
+options[MENU_LEVEL.SETTINGS, SETTINGS_MENU.BACK] = "Back";
+
+
+op_length = 0;
+menu_level = 0;
 
 

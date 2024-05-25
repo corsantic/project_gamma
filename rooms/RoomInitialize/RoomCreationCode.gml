@@ -1,1 +1,1 @@
-room_goto_next();//TODO: check this
+//room_goto_next();//TODO: check this
