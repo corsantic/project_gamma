@@ -20,5 +20,11 @@ state = ENEMY_STATE.CHASING;
 	
 	bullet_x_offset= 5;
 	bullet_y_offset= -8;
-
+	//spawn state
+	fade_speed = 1/15;
+	emerge_speed = .35;
+	
+	
+	
+	
 

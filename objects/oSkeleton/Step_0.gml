@@ -1,9 +1,43 @@
+//code commands
+var _wall_collisions = true;
+var _enemy_collisions = true;
+var _get_damage = true;
+
 //state machine
 switch(state)
 {
+	case ENEMY_STATE.SPAWN:
+		#region spawn state of skeletons
+		//fade in
+		if(image_alpha < 1)
+		{
+			//don't walk while fading in
+			spd = 0;
+			image_alpha += fade_speed;
+		}
+		
+		//walk out
+		_wall_collisions = false;
+		_get_damage = false;
+		if (image_alpha >= 1)
+		{
+			//set the right speed
+			spd = emerge_speed;
+			dir = 270; //straight down
+		}
+		
+		//switch to the chasing state
+		if(!place_meeting(x, y ,oWall))
+		{
+			state = ENEMY_STATE.CHASING;
+		}
+	#endregion
+	break;
+	
+	
 	//chase state
 	case ENEMY_STATE.CHASING:
-		//chase the player
+		#region chase the player
 			//direction
 			if(instance_exists(oPlayer))
 			{
@@ -34,7 +68,7 @@ switch(state)
 					shoot_timer = 0;
 				}
 			
-	
+	#endregion
 	break;
 	
 	case ENEMY_STATE.PAUSE_AND_SHOOT:
@@ -96,11 +130,14 @@ switch(state)
 			mask_index = -1;
 			
 			if (image_index >= image_number - 1) {
-			    instance_destroy();
+			    global.enemy_kill_count++;
+				instance_destroy();
 			}
 			
 		#endregion
 	break;
+	
+
 	
 	
 }
@@ -119,15 +156,33 @@ switch(state)
 		}
 		else { face = 1;}
 	//collisions
-		if (place_meeting(x + x_speed, y, oWall) || place_meeting(x + x_speed, y, oEnemyParent))
-		{
-			x_speed = 0;
-		}
-		if (place_meeting(x, y + y_speed, oWall) || place_meeting(x, y + y_speed, oEnemyParent))
-		{
-			y_speed = 0;
-		}
 	
+		//wall collision
+		if(_wall_collisions)
+		{
+			if (place_meeting(x + x_speed, y, oWall))
+			{
+				x_speed = 0;
+			}
+			if (place_meeting(x, y + y_speed, oWall))
+			{
+				y_speed = 0;
+			}
+		}
+		//enemy collisions
+		if(_enemy_collisions)
+		{
+			
+			if (place_meeting(x + x_speed, y, oEnemyParent))
+			{
+				x_speed = 0;
+			}
+			if (place_meeting(x, y + y_speed, oEnemyParent))
+			{
+				y_speed = 0;
+			}
+		}
+		
 	//moving
 		x += x_speed;
 		y += y_speed
@@ -138,8 +193,11 @@ switch(state)
 
 
 // Inherit the parent event
+if(_get_damage == true)
+{
 	//getting damaged and dying
 	event_inherited();
+}
 
 	
 
