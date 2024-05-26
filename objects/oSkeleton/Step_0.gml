@@ -129,9 +129,15 @@ switch(state)
 			sprite_index = sSkeletonDeath;
 			mask_index = -1;
 			
+			
 			if (image_index >= image_number - 1) {
-			    global.enemy_kill_count++;
+			    global.enemy_kill_count++;			
 				instance_destroy();
+				if(global.enemy_kill_count mod 5 == 0)
+				{
+					//create item
+					instance_create_depth(x, y, depth, oHeart);
+				}
 			}
 			
 		#endregion
