@@ -12,3 +12,4 @@ global.active_enemy_max = 30;
 global.total_enemies_spawned = 0;
 global.enemy_kill_count = 0;
 
+
