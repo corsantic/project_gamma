@@ -33,6 +33,7 @@
   "resources":[
     {"id":{"name":"o_Settings","path":"objects/o_Settings/o_Settings.yy",},},
     {"id":{"name":"oAk47Bullet","path":"objects/oAk47Bullet/oAk47Bullet.yy",},},
+    {"id":{"name":"oBoomCreate","path":"objects/oBoomCreate/oBoomCreate.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCrate","path":"objects/oCrate/oCrate.yy",},},
     {"id":{"name":"oDamageEnemy","path":"objects/oDamageEnemy/oDamageEnemy.yy",},},
@@ -63,6 +64,7 @@
     {"id":{"name":"s_MainMenu","path":"sprites/s_MainMenu/s_MainMenu.yy",},},
     {"id":{"name":"sAk47","path":"sprites/sAk47/sAk47.yy",},},
     {"id":{"name":"sAk47Pickup","path":"sprites/sAk47Pickup/sAk47Pickup.yy",},},
+    {"id":{"name":"sBoom","path":"sprites/sBoom/sBoom.yy",},},
     {"id":{"name":"sCrate","path":"sprites/sCrate/sCrate.yy",},},
     {"id":{"name":"sDamagePlayerTest","path":"sprites/sDamagePlayerTest/sDamagePlayerTest.yy",},},
     {"id":{"name":"sEnemy","path":"sprites/sEnemy/sEnemy.yy",},},
