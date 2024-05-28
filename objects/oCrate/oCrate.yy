@@ -10,8 +10,8 @@
   "name":"oCrate",
   "overriddenProperties":[],
   "parent":{
-    "name":"MapObjects",
-    "path":"folders/MapObjects.yy",
+    "name":"WallObjects",
+    "path":"folders/MapObjects/WallObjects.yy",
   },
   "parentObjectId":{
     "name":"oSolidWall",

@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"GameControl","folderPath":"folders/GameControl.yy","name":"GameControl","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"WallObjects","folderPath":"folders/MapObjects/WallObjects.yy","name":"WallObjects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Guns","folderPath":"folders/Guns.yy","name":"Guns","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Bullets","folderPath":"folders/Guns/Bullets.yy","name":"Bullets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Pickups","folderPath":"folders/Guns/Pickups.yy","name":"Pickups","resourceType":"GMFolder","resourceVersion":"2.0",},
