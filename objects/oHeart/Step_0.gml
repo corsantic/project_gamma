@@ -1,6 +1,6 @@
 //float in place
 float_direction += float_speed;
-y = ystart + dsin(float_direction)*2; 
+y = ystart + dsin(float_direction)*1; 
 
 
 

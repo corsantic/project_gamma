@@ -116,15 +116,18 @@ var _swap_key_pressed = global.swap_key_pressed;
 	var _playerWeapons = global.PlayerWeapons;
 	
 	//cycle through weapons
-	if(_swap_key_pressed){
+	if(_swap_key_pressed)
+	{
 	
 		//change the selection and wrap around
 		selected_weapon++;
 		
 		if(selected_weapon >= array_length(_playerWeapons)) { selected_weapon = 0;}
-		
-		weapon = _playerWeapons[selected_weapon];
+
 	}
+	
+	//set the new weapon
+	weapon = _playerWeapons[selected_weapon];
 	
 
 #endregion
