@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBoom",
-    "path":"sprites/sBoom/sBoom.yy",
+    "name":"sBoomCrate",
+    "path":"sprites/sBoomCrate/sBoomCrate.yy",
   },
   "spriteMaskId":null,
   "visible":true,
