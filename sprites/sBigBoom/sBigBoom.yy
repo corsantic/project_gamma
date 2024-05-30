@@ -36,8 +36,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"Effects",
+    "path":"folders/Environment/Effects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

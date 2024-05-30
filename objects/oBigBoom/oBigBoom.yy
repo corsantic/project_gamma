@@ -10,8 +10,8 @@
   "name":"oBigBoom",
   "overriddenProperties":[],
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"Effects",
+    "path":"folders/Environment/Effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

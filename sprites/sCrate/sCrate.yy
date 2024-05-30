@@ -19,7 +19,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":32,
+  "height":40,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"12265805-a186-453c-b056-b66f20483d06","blendMode":0,"displayName":"default","isLocked":false,"name":"12265805-a186-453c-b056-b66f20483d06","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -29,7 +29,7 @@
   "origin":9,
   "parent":{
     "name":"WallObjects",
-    "path":"folders/MapObjects/WallObjects.yy",
+    "path":"folders/Environment/WallObjects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":1,
-    "yorigin":12,
+    "yorigin":16,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

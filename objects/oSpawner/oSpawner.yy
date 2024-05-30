@@ -9,8 +9,8 @@
   "name":"oSpawner",
   "overriddenProperties":[],
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"EnemyRelated",
+    "path":"folders/Environment/EnemyRelated.yy",
   },
   "parentObjectId":{
     "name":"oSolidWall",

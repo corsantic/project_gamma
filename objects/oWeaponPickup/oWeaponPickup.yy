@@ -9,8 +9,8 @@
   "name":"oWeaponPickup",
   "overriddenProperties":[],
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"Pickups",
+    "path":"folders/Environment/Pickups.yy",
   },
   "parentObjectId":null,
   "persistent":false,

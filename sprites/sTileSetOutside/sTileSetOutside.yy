@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"MapObjects",
-    "path":"folders/MapObjects.yy",
+    "name":"Tiles",
+    "path":"folders/Tiles.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

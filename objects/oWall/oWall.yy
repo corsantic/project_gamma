@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"WallObjects",
-    "path":"folders/MapObjects/WallObjects.yy",
+    "path":"folders/Environment/WallObjects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

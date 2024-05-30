@@ -14,8 +14,8 @@
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"MapObjects",
-    "path":"folders/MapObjects.yy",
+    "name":"Tiles",
+    "path":"folders/Tiles.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

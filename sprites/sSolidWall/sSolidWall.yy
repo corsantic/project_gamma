@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"WallObjects",
-    "path":"folders/MapObjects/WallObjects.yy",
+    "path":"folders/Environment/WallObjects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

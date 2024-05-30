@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"EnemyRelated",
+    "path":"folders/Environment/EnemyRelated.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
