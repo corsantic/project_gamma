@@ -9,7 +9,12 @@ image_index = _hp_percent * (image_number);
 	if(hp <= 0 )
 	{
 		//create explosion
-		
+		var _boom_instance = instance_create_depth(x + 8, y + 8, -3000, oBigBoom);
+		with(_boom_instance)
+		{
+			image_xscale = 1.2;
+			image_yscale = 1.2;
+		}
 		
 		//destroy self
 		instance_destroy();

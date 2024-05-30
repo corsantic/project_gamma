@@ -92,13 +92,17 @@ function draw_player_weapon()
 
 		//receive damage
 		#region populate damage list
-			if (place_meeting(x, y, _damage_object))
+			if (place_meeting(x, y, _damage_object) ||
+			((_damage_object != oDamageParent) && place_meeting(x, y, oDamageAll)))
 			{
 				// getting a list of the damage instances
 					//create ds list and copy instances to it
 						var _instance_list = ds_list_create();
 						instance_place_list(x, y, _damage_object, _instance_list, false);
-			
+						if(_damage_object != oDamageParent)
+						{
+							instance_place_list(x, y, oDamageAll, _instance_list, false);
+						}
 					//get the size of our list
 						var _list_size = ds_list_size(_instance_list);
 
