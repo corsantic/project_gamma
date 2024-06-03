@@ -5,6 +5,9 @@
 	x += x_speed;
 	y += y_speed;
 	
+//depth
+	depth = -y;
+	
 //cleanup
 	//hit confirm destroy
 	if (hit_confirm && enemy_destroy) { destroy = true; }
