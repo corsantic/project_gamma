@@ -12,12 +12,12 @@ var _start_key_pressed = global.start_key_pressed;
 //pause menu
 if(_start_key_pressed)
 {
-		if(!instance_exists(oScreenPause))
+		if(!instance_exists(oPauseMenu))
 		{
-			instance_create_depth(0, 0, 0, oScreenPause);
+			instance_create_depth(0, 0, 0, oPauseMenu);
 		}
 		else{
-			instance_destroy(oScreenPause);
+			instance_destroy(oPauseMenu);
 		}
 }
 

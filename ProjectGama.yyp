@@ -54,6 +54,7 @@
     {"id":{"name":"oHUD","path":"objects/oHUD/oHUD.yy",},},
     {"id":{"name":"oInput","path":"objects/oInput/oInput.yy",},},
     {"id":{"name":"oMainPellet","path":"objects/oMainPellet/oMainPellet.yy",},},
+    {"id":{"name":"oPauseMenu","path":"objects/oPauseMenu/oPauseMenu.yy",},},
     {"id":{"name":"oPistolBullet","path":"objects/oPistolBullet/oPistolBullet.yy",},},
     {"id":{"name":"oPlantPot","path":"objects/oPlantPot/oPlantPot.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},

@@ -1,4 +1,3 @@
-
 //spawn an enemy
 	timer++;
 	
