@@ -19,7 +19,29 @@ function draw_player_weapon()
 
 }
 
-//damage calculation
+
+#region vfx
+function screen_pause()
+{
+	//pause self
+	if (instance_exists(oScreenPause))
+	{
+		image_speed = 0;
+		return true;
+	}
+	else {
+		image_speed = 1;
+	}
+	
+	return false;
+}
+
+
+
+#endregion
+
+
+#region damage calculation
 
 
 	//damage create event
@@ -174,3 +196,5 @@ function draw_player_weapon()
 		
 
 	}
+#endregion	
+

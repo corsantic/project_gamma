@@ -1,3 +1,9 @@
+//pause self
+var _is_screen_paused = screen_pause();
+if(_is_screen_paused) exit;
+
+
+
 //state machine
 
 switch(state){

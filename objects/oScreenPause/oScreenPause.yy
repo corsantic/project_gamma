@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oHeart",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"oScreenPause",
+  "eventList":[],
   "managed":true,
-  "name":"oHeart",
+  "name":"oScreenPause",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pickups",
-    "path":"folders/Environment/Pickups.yy",
+    "name":"GameControl",
+    "path":"folders/GameControl.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sHeart",
-    "path":"sprites/sHeart/sHeart.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

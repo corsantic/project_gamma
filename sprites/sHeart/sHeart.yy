@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"ProjectGama",
-    "path":"ProjectGama.yyp",
+    "name":"Pickups",
+    "path":"folders/Environment/Pickups.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

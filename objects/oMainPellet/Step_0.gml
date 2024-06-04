@@ -1,3 +1,8 @@
+//pause self
+var _is_screen_paused = screen_pause();
+if(_is_screen_paused) exit;
+
+
 //move
 	x_speed = lengthdir_x(spd, dir);
 	y_speed = lengthdir_y(spd, dir);

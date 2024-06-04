@@ -1,3 +1,7 @@
+var _is_screen_paused = screen_pause();
+if(_is_screen_paused) exit;
+
+
 //code commands
 var _wall_collisions = true;
 var _enemy_collisions = true;

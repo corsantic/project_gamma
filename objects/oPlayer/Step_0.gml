@@ -6,6 +6,29 @@ var _down_key = global.down_key;
 var _space_key_pressed = global.space_key_pressed;
 var _shoot_key = global.shoot_key;
 var _swap_key_pressed = global.swap_key_pressed;
+var _start_key_pressed = global.start_key_pressed;
+
+#region pause game
+//pause menu
+if(_start_key_pressed)
+{
+		if(!instance_exists(oScreenPause))
+		{
+			instance_create_depth(0, 0, 0, oScreenPause);
+		}
+		else{
+			instance_destroy(oScreenPause);
+		}
+}
+
+
+
+
+//pause self
+var _is_screen_paused = screen_pause();
+if(_is_screen_paused) exit;
+
+#endregion
 
 
 
