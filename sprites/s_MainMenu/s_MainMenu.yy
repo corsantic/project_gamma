@@ -49,7 +49,7 @@
   "origin":0,
   "parent":{
     "name":"MenuSystem",
-    "path":"folders/MenuSystem.yy",
+    "path":"folders/GameControl/MenuSystem.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

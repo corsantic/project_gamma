@@ -30,8 +30,6 @@ if(_is_screen_paused) exit;
 
 #endregion
 
-
-
 #region player movement
 	// get the direction
 	var _horizontal_key = _right_key - _left_key;
@@ -104,7 +102,12 @@ if(_is_screen_paused) exit;
 	
 #endregion
 #region get damaged
-	get_damaged(oDamagePlayer, true);
+	if (get_damaged(oDamagePlayer, true))
+	{
+		
+		//screen pause
+		create_screen_pause_timed(25);
+	}
 #endregion
 
 
@@ -185,7 +188,6 @@ if(_shoot_key && shoot_timer <= 0)
 			}
 			
 		}
-		
 }
 #endregion
 

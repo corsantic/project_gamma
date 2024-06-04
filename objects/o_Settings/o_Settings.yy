@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"MenuSystem",
-    "path":"folders/MenuSystem.yy",
+    "path":"folders/GameControl/MenuSystem.yy",
   },
   "parentObjectId":null,
   "persistent":true,

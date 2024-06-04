@@ -16,6 +16,9 @@ image_index = _hp_percent * (image_number);
 			image_yscale = 1.2;
 		}
 		
+		//screen pause
+		create_screen_pause_timed();
+		
 		//destroy self
 		instance_destroy();
 	}

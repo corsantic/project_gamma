@@ -10,8 +10,8 @@
   "name":"oPauseMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"GameControl",
-    "path":"folders/GameControl.yy",
+    "name":"MenuSystem",
+    "path":"folders/GameControl/MenuSystem.yy",
   },
   "parentObjectId":{
     "name":"oScreenPause",

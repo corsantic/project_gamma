@@ -36,6 +36,14 @@ function screen_pause()
 	return false;
 }
 
+function create_screen_pause_timed(_time = 3){
+
+	var _screen_pause_timer = instance_create_depth(0, 0, 0, oScreenPauseTimed);
+	with(_screen_pause_timer)
+	{
+		timer =  _time;
+	}
+}
 
 
 #endregion
@@ -104,7 +112,7 @@ function screen_pause()
 			//clamp hp
 			hp = clamp(hp, 0, max_hp);
 		
-			exit;
+			return false;
 		}
 		//make sure the iframe blinking stops
 		if(_iframes == true)
@@ -112,6 +120,8 @@ function screen_pause()
 			image_alpha = 1;
 		}
 
+
+		var _hit_confirm = false;
 		//receive damage
 		#region populate damage list
 			if (place_meeting(x, y, _damage_object) ||
@@ -128,8 +138,6 @@ function screen_pause()
 					//get the size of our list
 						var _list_size = ds_list_size(_instance_list);
 
-					//loop all damage instances
-						var _hit_confirm = false;
 						
 						for (var _i = 0; _i < _list_size; _i++)
 						{
@@ -194,7 +202,9 @@ function screen_pause()
 		//clamp hp
 		hp = clamp(hp, 0, max_hp);
 		
-
+		
+		//return hit confirm variable value
+		return _hit_confirm;
 	}
 #endregion	
 
