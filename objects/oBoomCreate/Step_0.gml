@@ -19,6 +19,10 @@ image_index = _hp_percent * (image_number);
 		//screen pause
 		create_screen_pause_timed();
 		
+		
+		//camera shake
+		camera_shake(8);
+		
 		//destroy self
 		instance_destroy();
 	}

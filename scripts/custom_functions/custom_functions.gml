@@ -45,6 +45,15 @@ function create_screen_pause_timed(_time = 3){
 	}
 }
 
+function camera_shake(_amount = 4)
+{
+	_amount *= global.screen_shake_amount;
+	with(oCamera)
+	{
+		x_shake_amount = _amount;
+		y_shake_amount = _amount;
+	}
+}
 
 #endregion
 

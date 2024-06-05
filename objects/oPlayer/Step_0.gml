@@ -104,6 +104,8 @@ if(_is_screen_paused) exit;
 #region get damaged
 	if (get_damaged(oDamagePlayer, true))
 	{
+		//screen shake
+		camera_shake(6);
 		
 		//screen pause
 		create_screen_pause_timed(25);
@@ -164,6 +166,10 @@ if(_shoot_key && shoot_timer <= 0)
 {
 	//reset the timer
 	shoot_timer = weapon.cooldown;
+	
+	//camera shake
+	camera_shake(weapon.shake);
+	
 	//shooting
 		//create the bullet
 		var _x_offset = lengthdir_x(weapon.length + weapon_offset_distance, aim_direction);
