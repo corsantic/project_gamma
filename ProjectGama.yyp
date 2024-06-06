@@ -106,6 +106,7 @@
     {"id":{"name":"sShotgunPickup","path":"sprites/sShotgunPickup/sShotgunPickup.yy",},},
     {"id":{"name":"sSkeletonDeath","path":"sprites/sSkeletonDeath/sSkeletonDeath.yy",},},
     {"id":{"name":"sSkeletonWalking","path":"sprites/sSkeletonWalking/sSkeletonWalking.yy",},},
+    {"id":{"name":"sSmallBoom","path":"sprites/sSmallBoom/sSmallBoom.yy",},},
     {"id":{"name":"sSolidWall","path":"sprites/sSolidWall/sSolidWall.yy",},},
     {"id":{"name":"sSpawner","path":"sprites/sSpawner/sSpawner.yy",},},
     {"id":{"name":"sTileSetOutside_2","path":"sprites/sTileSetOutside_2/sTileSetOutside_2.yy",},},
