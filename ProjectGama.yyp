@@ -61,6 +61,7 @@
     {"id":{"name":"oScreenPause","path":"objects/oScreenPause/oScreenPause.yy",},},
     {"id":{"name":"oScreenPauseTimed","path":"objects/oScreenPauseTimed/oScreenPauseTimed.yy",},},
     {"id":{"name":"oSkeleton","path":"objects/oSkeleton/oSkeleton.yy",},},
+    {"id":{"name":"oSmallBoom","path":"objects/oSmallBoom/oSmallBoom.yy",},},
     {"id":{"name":"oSolidWall","path":"objects/oSolidWall/oSolidWall.yy",},},
     {"id":{"name":"oSpawner","path":"objects/oSpawner/oSpawner.yy",},},
     {"id":{"name":"oTitleMenu","path":"objects/oTitleMenu/oTitleMenu.yy",},},

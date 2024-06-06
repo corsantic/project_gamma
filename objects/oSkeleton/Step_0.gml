@@ -142,6 +142,9 @@ switch(state)
 					//create item
 					instance_create_depth(x, y, depth, oHeart);
 				}
+				//boom vfx
+				instance_create_depth(x, y, depth, oSmallBoom);
+				
 			}
 			
 		#endregion

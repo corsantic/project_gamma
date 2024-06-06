@@ -172,7 +172,7 @@ function camera_shake(_amount = 4)
 									_hit_confirm = true;
 								
 									//tell the damage instance to destroy itself
-									_instance.hit_confirm= true;				
+									_instance.hit_confirm = true;				
 								}
 							}
 						}
