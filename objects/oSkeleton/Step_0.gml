@@ -143,7 +143,7 @@ switch(state)
 					instance_create_depth(x, y, depth, oHeart);
 				}
 				//boom vfx
-				instance_create_depth(x, y, depth, oSmallBoom);
+				create_animated_vfx(sSmallBoom, x, y, depth);
 				
 			}
 			

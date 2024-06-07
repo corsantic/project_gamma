@@ -42,7 +42,7 @@
     ],
     "top":0,
   },
-  "origin":1,
+  "origin":9,
   "parent":{
     "name":"Bullets",
     "path":"folders/Guns/Bullets.yy",
@@ -95,7 +95,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":2,
-    "yorigin":0,
+    "yorigin":2,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

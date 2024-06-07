@@ -55,7 +55,15 @@ switch(state){
 	if(hit_confirm && player_destroy) { destroy = true; }
 
 	//destroy
-	if (destroy) { instance_destroy(); }
+	if (destroy) { 
+		
+		//shoot burst
+		create_animated_vfx(sShootBurst, x, y, depth-40);
+				
+		
+		
+		instance_destroy(); 
+		}
 	
 	//wall collision
 	if(place_meeting(x,y, oSolidWall)) { destroy = true;}

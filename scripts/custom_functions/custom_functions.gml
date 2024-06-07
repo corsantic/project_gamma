@@ -20,42 +20,7 @@ function draw_player_weapon()
 }
 
 
-#region vfx
-function screen_pause()
-{
-	//pause self
-	if (instance_exists(oScreenPause))
-	{
-		image_speed = 0;
-		return true;
-	}
-	else {
-		image_speed = 1;
-	}
-	
-	return false;
-}
 
-function create_screen_pause_timed(_time = 3){
-
-	var _screen_pause_timer = instance_create_depth(0, 0, 0, oScreenPauseTimed);
-	with(_screen_pause_timer)
-	{
-		timer =  _time;
-	}
-}
-
-function camera_shake(_amount = 4)
-{
-	_amount *= global.screen_shake_amount;
-	with(oCamera)
-	{
-		x_shake_amount = _amount;
-		y_shake_amount = _amount;
-	}
-}
-
-#endregion
 
 
 #region damage calculation
@@ -133,8 +98,10 @@ function camera_shake(_amount = 4)
 		var _hit_confirm = false;
 		//receive damage
 		#region populate damage list
-			if (place_meeting(x, y, _damage_object) ||
-			((_damage_object != oDamageParent) && place_meeting(x, y, oDamageAll)))
+		
+			
+			if ((place_meeting(x, y, _damage_object) ||
+			((_damage_object != oDamageParent) && place_meeting(x, y, oDamageAll))))
 			{
 				// getting a list of the damage instances
 					//create ds list and copy instances to it
@@ -172,7 +139,13 @@ function camera_shake(_amount = 4)
 									_hit_confirm = true;
 								
 									//tell the damage instance to destroy itself
-									_instance.hit_confirm = true;				
+									_instance.hit_confirm = true;	
+									
+									//create an impact visual
+									if(_instance.hit_vfx)
+									{
+										create_animated_vfx(sShootBurst, _instance.x,_instance.y, _instance.depth)
+									}
 								}
 							}
 						}
