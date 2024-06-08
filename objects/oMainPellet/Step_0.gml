@@ -24,7 +24,7 @@ if(_is_screen_paused) exit;
 		
 		instance_destroy(); 
 		
-		}
+	}
 	
 	//collision
 	if(place_meeting(x, y, oSolidWall)) { destroy = true; }

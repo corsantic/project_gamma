@@ -178,11 +178,19 @@ if(_shoot_key && shoot_timer <= 0)
 		var _spread = weapon.spread;
 		var _spread_div = _spread / max(weapon.bullet_num - 1, 1);
 		
+		var _weapon_tip_x = center_x + _x_offset;
+		var _weapon_tip_y = center_y + _y_offset;
+		
+		
+		//create weapon flash
+		create_animated_vfx(sShootFlash, _weapon_tip_x, _weapon_tip_y, depth - 10, aim_direction);
+		
+		
 		//create the correct number of bullets
 		for(var _i = 0; _i < weapon.bullet_num; _i++)
 		{
 			
-			var _bullet_instance = instance_create_depth(center_x + _x_offset, center_y + _y_offset, depth - 100, weapon.bullet);
+			var _bullet_instance = instance_create_depth(_weapon_tip_x, _weapon_tip_y, depth, weapon.bullet);
 	
 			//change the bullet's direction
 			with(_bullet_instance)

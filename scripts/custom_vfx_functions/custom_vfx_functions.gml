@@ -34,13 +34,15 @@ function camera_shake(_amount = 4)
 	}
 }
 
-function create_animated_vfx(_sprite, _x, _y, _depth = -4000)
+function create_animated_vfx(_sprite, _x, _y, _depth = -4000, _rotation =0)
 {
 		//boom
 		var _instance = instance_create_depth(_x, _y, _depth, oAnimatedVFX);
 		with(_instance)
 		{
-			_instance.sprite_index = _sprite;
+			sprite_index = _sprite;
+			image_angle = _rotation;
+			
 		}
 
 }

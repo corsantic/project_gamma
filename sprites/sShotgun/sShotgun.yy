@@ -3,7 +3,7 @@
   "%Name":"sShotgun",
   "bboxMode":2,
   "bbox_bottom":2,
-  "bbox_left":0,
+  "bbox_left":1,
   "bbox_right":12,
   "bbox_top":1,
   "collisionKind":1,
