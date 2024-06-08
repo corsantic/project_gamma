@@ -133,10 +133,11 @@ switch(state)
 			sprite_index = sSkeletonDeath;
 			mask_index = -1;
 			
-			
 			if (image_index >= image_number - 1) {
-			    global.enemy_kill_count++;			
+			    global.enemy_kill_count++;		
+				
 				instance_destroy();
+				
 				if(global.enemy_kill_count mod 30 == 0 || global.enemy_kill_count == global.enemy_room_max)
 				{
 					//create item

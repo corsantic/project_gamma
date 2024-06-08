@@ -1,6 +1,6 @@
 /// @contructor create_weapon()
 
-function CreateWeapon(_sprite = sPistol, _weapon_length = 0, _bullet_object = oRegularBullet, _cooldown = 9, _bullet_num = 1, _spread = 0, _pickup_sprite = sShotgunPickup, _shake = 1) constructor
+function CreateWeapon(_sprite = sPistol, _weapon_length = 0, _bullet_object = oRegularBullet, _cooldown = 9, _bullet_num = 1, _spread = 0, _pickup_sprite = sShotgunPickup, _shake = 1, _flash_sprite = sShootFlash) constructor
 {
 	sprite = _sprite;
 	length = _weapon_length;
@@ -10,6 +10,7 @@ function CreateWeapon(_sprite = sPistol, _weapon_length = 0, _bullet_object = oR
 	spread = _spread;
 	pickup_sprite = _pickup_sprite;
 	shake = _shake;
+	flash_sprite = _flash_sprite;
 }
 
 // the player's weapon inventory
@@ -23,10 +24,11 @@ global.WeaponList = {
 		sprite_get_bbox_right(sPistol) - sprite_get_xoffset(sPistol),
 		oPistolBullet,
 		12,
-		3,
-		50,
+		1,
+		0,
 		sPistolPickup,
-		0.5
+		0.5,
+		sShootFlash
 	),
 	shotgun: new CreateWeapon(
 		sShotgun,
@@ -36,7 +38,8 @@ global.WeaponList = {
 		7,
 		70,
 		sShotgunPickup,
-		1.5
+		1.5,
+		sShootFlash
 		),
 	ak47: new CreateWeapon(
 		sAk47,
@@ -46,7 +49,8 @@ global.WeaponList = {
 		1,
 		0,
 		sAk47Pickup,
-		0.8
+		0.8,
+		sShootFlash
 		)
 
 }

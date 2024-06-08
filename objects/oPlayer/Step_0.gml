@@ -183,7 +183,7 @@ if(_shoot_key && shoot_timer <= 0)
 		
 		
 		//create weapon flash
-		create_animated_vfx(sShootFlash, _weapon_tip_x, _weapon_tip_y, depth - 10, aim_direction);
+		create_animated_vfx(weapon.flash_sprite, _weapon_tip_x, _weapon_tip_y, depth - 10, aim_direction);
 		
 		
 		//create the correct number of bullets

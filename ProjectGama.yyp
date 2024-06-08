@@ -87,6 +87,7 @@
     {"id":{"name":"sEnemyCountHUD","path":"sprites/sEnemyCountHUD/sEnemyCountHUD.yy",},},
     {"id":{"name":"sEnemyHealth","path":"sprites/sEnemyHealth/sEnemyHealth.yy",},},
     {"id":{"name":"sHeart","path":"sprites/sHeart/sHeart.yy",},},
+    {"id":{"name":"sHitScreen","path":"sprites/sHitScreen/sHitScreen.yy",},},
     {"id":{"name":"sPellet","path":"sprites/sPellet/sPellet.yy",},},
     {"id":{"name":"sPistol","path":"sprites/sPistol/sPistol.yy",},},
     {"id":{"name":"sPistolBullet","path":"sprites/sPistolBullet/sPistolBullet.yy",},},
