@@ -52,6 +52,7 @@
     {"id":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},},
     {"id":{"name":"oGameOverScreen","path":"objects/oGameOverScreen/oGameOverScreen.yy",},},
     {"id":{"name":"oHeart","path":"objects/oHeart/oHeart.yy",},},
+    {"id":{"name":"oHitScreen","path":"objects/oHitScreen/oHitScreen.yy",},},
     {"id":{"name":"oHUD","path":"objects/oHUD/oHUD.yy",},},
     {"id":{"name":"oInput","path":"objects/oInput/oInput.yy",},},
     {"id":{"name":"oMainPellet","path":"objects/oMainPellet/oMainPellet.yy",},},
