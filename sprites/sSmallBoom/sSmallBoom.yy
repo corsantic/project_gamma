@@ -54,8 +54,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Effects",
-    "path":"folders/Environment/Effects.yy",
+    "name":"VFX",
+    "path":"folders/Environment/VFX.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

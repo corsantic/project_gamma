@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"sfxShotgunShot.mp3",
   "type":0,
-  "volume":0.15,
+  "volume":1.0,
 }

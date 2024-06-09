@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Effects",
-    "path":"folders/Environment/Effects.yy",
+    "name":"VFX",
+    "path":"folders/Environment/VFX.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -10,8 +10,8 @@
   "name":"oBigBoom",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effects",
-    "path":"folders/Environment/Effects.yy",
+    "name":"VFX",
+    "path":"folders/Environment/VFX.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -4,3 +4,4 @@ global.screen_shake_amount = 1;
 global.sound_effect_priority = 8;
 //sound effect settings
 global.is_sfx_on = true;
+global.sfx_volume = 0.05;
