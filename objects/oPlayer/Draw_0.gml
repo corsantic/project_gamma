@@ -21,7 +21,6 @@
 		var _dash_image = _cd_percent *  (sprite_get_number(sPlayerDashCd) -1); //get number of the sprites in 
 		draw_sprite(sPlayerDashCd, _dash_image, x,  y - sprite_height - 1);
 	#endregion
-	
 
 	
 	

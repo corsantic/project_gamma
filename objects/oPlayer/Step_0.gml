@@ -3,7 +3,7 @@ var _right_key = global.right_key;
 var _left_key =	global.left_key;
 var _up_key = global.up_key;
 var _down_key = global.down_key;
-var _space_key_pressed = global.space_key_pressed;
+var _dash_key_pressed = global.dash_key_pressed;
 var _shoot_key = global.shoot_key;
 var _swap_key_pressed = global.swap_key_pressed;
 var _start_key_pressed = global.start_key_pressed;
@@ -32,8 +32,8 @@ if(_is_screen_paused) exit;
 
 #region player movement
 	// get the direction
-	var _horizontal_key = _right_key - _left_key;
-	var _vertical_key = _down_key - _up_key;//in game maker y is reverted
+	var _horizontal_key = global.xasis_left;
+	var _vertical_key = global.yasis_left;
 	move_direction = point_direction(0, 0, _horizontal_key, _vertical_key)
 	
 	// get the x and y speeds
@@ -57,7 +57,7 @@ if(_is_screen_paused) exit;
 	}
 	
 	//dash
-	if(_space_key_pressed && !is_dashing && current_cooldown <= 0)
+	if(_dash_key_pressed && !is_dashing && current_cooldown <= 0)
 	{
 		is_dashing = true;
 		dash_time = dash_duration;
@@ -120,8 +120,21 @@ if(_is_screen_paused) exit;
 #region player aiming
 	center_y = y + center_y_offset;
 	center_x = x + center_x_offset;
+	//direction check: is controller or kbm
+	if(global.controller_mode)
+	{
+		if(global.xasis_right != 0 || (global.yasis_right != 0))
+		{
+			aim_direction = point_direction(0, 0, global.xasis_right, global.yasis_right);
+		}
+	}
+	else
+	{
+		aim_direction = point_direction(center_x, center_y, mouse_x, mouse_y);
+	}
 	
-	aim_direction = point_direction(center_x, center_y, mouse_x, mouse_y);
+	
+	
 #endregion
 #region sprite control
 	//make sure the player is facing the correct direction
