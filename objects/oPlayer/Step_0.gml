@@ -198,6 +198,8 @@ if(_shoot_key && shoot_timer <= 0)
 		var _weapon_tip_x = center_x + _x_offset;
 		var _weapon_tip_y = center_y + _y_offset;
 		
+		//play sound effect
+		play_sfx(weapon.sound_effect);	
 		
 		//create weapon flash
 		create_animated_vfx(weapon.flash_sprite, _weapon_tip_x, _weapon_tip_y, depth - 10, aim_direction);

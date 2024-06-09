@@ -11,8 +11,17 @@ height = op_border *2 + string_height(options[MENU_LEVEL.MAIN][MAIN_MENU.START_G
 
 //center menu
 var _cam = view_camera[0];
-x = camera_get_view_x(_cam) + camera_get_view_width(_cam)/2 - width/2 ;
-y = camera_get_view_y(_cam) + camera_get_view_height(_cam)/2 - height/2 ;
+var _cam_x = camera_get_view_x(_cam);
+var _cam_y = camera_get_view_y(_cam);
+var _cam_width = camera_get_view_width(_cam);
+var _cam_height = camera_get_view_height(_cam);
+
+x = _cam_x + _cam_width/2 - width/2 ;
+y = _cam_y + _cam_height/2 - height/2 ;
+
+//draw a black rectangle over the screen
+	draw_set_alpha(0.6);
+	draw_rectangle_color(_cam_x, _cam_y, _cam_x + _cam_width, _cam_y + _cam_height, c_black, c_black, c_black, c_black, false);
 
 //draw the menu background
 draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/sprite_height, 0, c_white, 1);
@@ -37,5 +46,6 @@ for (var _i = 0; _i < op_length; _i++)
 	
 }
 
+	draw_set_alpha(1);
 
 

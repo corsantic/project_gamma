@@ -30,6 +30,7 @@ enum SETTINGS_MENU
 	BRIGHTNESS,
 	CONTROL,
 	BACK
-	
-
 }
+
+
+

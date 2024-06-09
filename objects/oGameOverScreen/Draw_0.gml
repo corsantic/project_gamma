@@ -4,7 +4,7 @@ var _cam_y = camera_get_view_y(_cam);
 var _cam_width = camera_get_view_width(_cam);
 var _cam_height = camera_get_view_height(_cam);
 
-//draw a black rectang over the screen
+//draw a black rectangle over the screen
 	draw_set_alpha(alpha * alpha_max);
 	draw_rectangle_color(_cam_x, _cam_y, _cam_x + _cam_width, _cam_y + _cam_height, c_black, c_black, c_black, c_black, false);
 
