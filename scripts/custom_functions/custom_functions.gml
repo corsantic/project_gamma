@@ -13,8 +13,6 @@ function draw_player_weapon()
 	{
 		_weapon_y_scale = -1;
 	}
-
-
 	draw_sprite_ext(weapon.sprite, 0, center_x + _x_offset, center_y +_y_offset, 1, _weapon_y_scale, aim_direction, c_white, image_alpha);
 
 }

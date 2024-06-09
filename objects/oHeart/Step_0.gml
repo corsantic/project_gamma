@@ -12,6 +12,8 @@ if (place_meeting(x, y, oPlayer))
 	//heal the player
 	if(oPlayer.hp < oPlayer.max_hp )
 	{	
+		//sound
+		ds_list_add(oSFX.sound_effect, sfxHeartPickup);
 		oPlayer.hp += heal;
 		instance_destroy();
 	}

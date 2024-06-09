@@ -104,9 +104,11 @@ if(_is_screen_paused) exit;
 #region get damaged
 	if (get_damaged(oDamagePlayer, true))
 	{
+		//sound
+		ds_list_add(oSFX.sound_effect, sfxGetDamaged);
+		
 		//hit screen
 		instance_create_depth(0, 0, 0, oHitScreen);
-		
 		
 		//screen shake
 		camera_shake(6);

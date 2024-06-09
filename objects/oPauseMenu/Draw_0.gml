@@ -42,8 +42,6 @@ for (var _i = 0; _i < op_length; _i++)
 	//draw_rectangle_color(x + op_border,y + op_border + op_space*_i, x + op_border + string_width(options[menu_level, _i]), y + op_border + op_space*_i + string_height(options[menu_level, _i]),c_red,c_red,c_red,c_red,1)
 
 	draw_text_color(x + op_border, y + op_border + op_space*_i, options[menu_level, _i], _c, _c, _c, _c, 1);
-	
-	
 }
 
 	draw_set_alpha(1);

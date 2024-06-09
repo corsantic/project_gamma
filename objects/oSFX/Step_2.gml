@@ -1,7 +1,7 @@
 /// @description sound
 
 // get the volume
-var _sfx_vol = global.sfx_volume;
+var _sfx_vol = global.sfx_volume * global.master_volume;
 
 //play sfx loop effects
 for(var _i = 0; _i < ds_list_size(sound_effect); _i++)
