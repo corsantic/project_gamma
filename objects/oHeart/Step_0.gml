@@ -13,7 +13,7 @@ if (place_meeting(x, y, oPlayer))
 	if(oPlayer.hp < oPlayer.max_hp )
 	{	
 		//sound
-		ds_list_add(oSFX.sound_effect, sfxHeartPickup);
+		ds_list_add(oSFX.sfx_list, new CreateSFX(sfxHeartPickup, 1));
 		oPlayer.hp += heal;
 		instance_destroy();
 	}

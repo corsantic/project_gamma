@@ -1,2 +1,3 @@
 /// @description for sfx
-sound_effect = ds_list_create();
+// SoundEffect object list
+sfx_list = ds_list_create();

@@ -16,7 +16,7 @@ image_index = _hp_percent * (image_number);
 			image_yscale = 1.2;
 		}
 		//play sound
-		ds_list_add(oSFX.sound_effect, sfxExplosion);	
+		ds_list_add(oSFX.sfx_list, new CreateSFX(sfxExplosion));	
 		
 		//screen pause
 		create_screen_pause_timed();

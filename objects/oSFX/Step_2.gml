@@ -2,15 +2,16 @@
 
 // get the volume
 var _sfx_vol = global.sfx_volume * global.master_volume;
-
+var _sfx_list_length = ds_list_size(sfx_list);
 //play sfx loop effects
-for(var _i = 0; _i < ds_list_size(sound_effect); _i++)
+for(var _i = 0; _i < _sfx_list_length; _i++)
 {
 	//play sound
-	play_sfx(ds_list_find_value(sound_effect, _i), false, _sfx_vol);
+	var _sfx_value = ds_list_find_value(sfx_list, _i);
+	play_sfx(_sfx_value.sfx, false, _sfx_vol, _sfx_value.pitch);
 }
 
 //reset variable
-ds_list_clear(sound_effect);
+ds_list_clear(sfx_list);
 
 

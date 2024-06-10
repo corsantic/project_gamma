@@ -1,1 +1,1 @@
-ds_list_destroy(sound_effect);
+ds_list_destroy(sfx_list);
