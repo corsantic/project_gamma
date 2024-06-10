@@ -9,5 +9,7 @@ if(image_index == 0 && place_meeting(x, y, oPlayer))
 
 if(image_index == 1 && !place_meeting(x, y, oPlayer))
 {
+	ds_list_add(oSFX.sfx_list, new CreateSFX(sfxButtonReleased, 1));
 	image_index = 0;	
+	
 }
