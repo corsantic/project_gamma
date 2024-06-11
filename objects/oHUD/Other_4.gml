@@ -1,2 +1,2 @@
-/// @description
-audio_play_sound(sfxMusicLevel_1, 0, true);
+//select room music
+select_room_music();

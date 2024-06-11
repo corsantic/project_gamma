@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"o_Settings",
+  "%Name":"oSettings",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_Settings",
+  "name":"oSettings",
   "overriddenProperties":[],
   "parent":{
     "name":"MenuSystem",

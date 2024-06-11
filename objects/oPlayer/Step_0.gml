@@ -105,7 +105,7 @@ if(_is_screen_paused) exit;
 	if (get_damaged(oDamagePlayer, true))
 	{
 		//sound
-		ds_list_add(oSFX.sfx_list, new CreateSFX(sfxGetDamaged));
+		ds_list_add(oSFX.sfx_list, new CreateSFX(sfxGetDamaged, 1, 4));
 		
 		//hit screen
 		instance_create_depth(0, 0, 0, oHitScreen);

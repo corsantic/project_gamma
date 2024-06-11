@@ -1,6 +1,16 @@
 /// @contructor create_weapon()
 
-function CreateWeapon(_sprite = sPistol, _weapon_length = 0, _bullet_object = oRegularBullet, _cooldown = 9, _bullet_num = 1, _spread = 0, _pickup_sprite = sShotgunPickup, _shake = 1, _flash_sprite = sShootFlash, _sound_effect = sfxShotgunShot) constructor
+function CreateWeapon(	_sprite = sPistol,
+						_weapon_length = 0,
+						_bullet_object = oRegularBullet,
+						_cooldown = 9,
+						_bullet_num = 1,
+						_spread = 0,
+						_pickup_sprite = sShotgunPickup,
+						_shake = 1,
+						_flash_sprite = sShootFlash,
+						_sound_effect = sfxShotgunShot) 
+constructor
 {
 	sprite = _sprite;
 	length = _weapon_length;

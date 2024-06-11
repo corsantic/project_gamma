@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.104,
+  "duration":0.081406,
   "name":"sfxGetDamaged",
   "parent":{
     "name":"SFX",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxGetDamaged.mp3",
+  "soundFile":"sfxGetDamaged.wav",
   "type":0,
   "volume":1.0,
 }

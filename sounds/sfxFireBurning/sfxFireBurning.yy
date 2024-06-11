@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sfxMusicLevel_1",
+  "%Name":"sfxFireBurning",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":104.045715,
-  "name":"sfxMusicLevel_1",
+  "duration":13.5,
+  "name":"sfxFireBurning",
   "parent":{
-    "name":"Music",
-    "path":"folders/Sounds/Music.yy",
+    "name":"SFX",
+    "path":"folders/Sounds/SFX.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxMusicLevel_1.mp3",
+  "soundFile":"sfxFireBurning.wav",
   "type":0,
-  "volume":0.1,
+  "volume":1.0,
 }
