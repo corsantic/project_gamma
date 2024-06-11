@@ -15,6 +15,9 @@ if(_is_player_contains_weapon)
 
 if (place_meeting(x, y, oPlayer))
 {
+		//play sfx
+		ds_list_add(oSFX.sfx_list, new CreateSFX(sfxWeaponPickup, 1, 3, false));
+	
 		//add the weapon
 		array_push(global.PlayerWeapons, weapon);
 	

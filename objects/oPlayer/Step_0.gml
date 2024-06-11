@@ -118,7 +118,6 @@ if(_is_screen_paused) exit;
 	}
 #endregion
 
-
 #region player aiming
 	center_y = y + center_y_offset;
 	center_x = x + center_x_offset;
