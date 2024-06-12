@@ -1,3 +1,6 @@
+var _is_screen_paused = screen_pause();
+if(_is_screen_paused) exit;
+
 /// @description
 if(instance_exists(oButton))
 {
@@ -15,12 +18,18 @@ if(instance_exists(oButton))
 		{
 			audio_stop_sound(sfxFireBurning);
 		}
+		
+
 	}
 	if(state == 1)
 	{
+	
 		sprite_index = sFireVentOn;
 		if(!audio_is_playing(sfxFireBurning))
-			ds_list_add(oSFX.sfx_list, new CreateSFX(sfxFireBurning, 1, 1, true, 6));
+		{
+			ds_list_add(oSFX.sfx_list, new CreateSFX(sfxFireBurning, 1, 1, true, 6));	
+		}
+
 	}
 
 //depth

@@ -7,7 +7,7 @@ function select_room_music(){
 		case Level_1:
 		{
 			/// @description 
-			//play level 1 room music
+			// play level 1 room music
 			audio_play_sound(sfxMusicLevel_1, global.music_priority, true, global.music_volume);
 			break;
 		}

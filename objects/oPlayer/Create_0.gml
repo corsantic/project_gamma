@@ -27,8 +27,10 @@
 
 
 	face = 3;
+	moving_direction = 3;
 	sprites = [sPlayerRightRun, sPlayerUpRun, sPlayerLeftRun, sPlayerDownRun];
 	sprites_idle = [sPlayerRightIdle, sPlayerUpIdle, sPlayerLeftIdle, sPlayerDownIdle];
+	sprites_dash = [sPlayerRightDash, sPlayerUpDash, sPlayerLeftDash, sPlayerDownDash];
 
 
 //weapon info

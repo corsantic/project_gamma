@@ -62,6 +62,7 @@ if(_is_screen_paused) exit;
 		is_dashing = true;
 		dash_time = dash_duration;
 		current_cooldown = dash_cooldown;
+
 	}
 	
 	// Update dash status
@@ -84,7 +85,6 @@ if(_is_screen_paused) exit;
 		{
 		    x += _dash_vector_x;
 		    y += _dash_vector_y;
-
 		}
 
 	}
@@ -92,6 +92,7 @@ if(_is_screen_paused) exit;
 		// move the player
 		x += x_speed;
 		y += y_speed;
+
 	}
 	
 
@@ -143,20 +144,36 @@ if(_is_screen_paused) exit;
 	face = round(aim_direction / _degree); 
 	
 	if face == 4 { face = 0; };
-	
-	mask_index = sprites[3];
-	//set the player sprite
-	if(x_speed == 0 && y_speed == 0)
+	/*	Move direction of the player. 
+	*	Because we want to change player's sprite when dashing
+	*	According to move direction(Right 0/90 = 0, Up 90/90 = 1, Left 180/90 = 2, Down 270/90 = 3)
+	*/
+	if moving_direction == 4 { moving_direction = 0; };
+	//dash sprite change
+	if(is_dashing)
 	{
-		//animate 
-		//image_index = 0;
+		moving_direction = round(move_direction/ _degree);
+		sprite_index = sprites_dash[moving_direction];
+	}
+	else{
+		//set the player sprite
+		mask_index = sprites[3];
+		
+		if(x_speed == 0 && y_speed == 0)
+		{
+			//animate 
+			//image_index = 0;
 	
-		sprite_index = sprites_idle[face];
+			sprite_index = sprites_idle[face];
+		}
+		else
+		{
+			sprite_index = sprites[face];
+		}
+	
 	}
-	else
-	{
-		sprite_index = sprites[face];
-	}
+
+
 #endregion
 #region weapon swapping
 	var _playerWeapons = global.PlayerWeapons;

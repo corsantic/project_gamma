@@ -8,7 +8,9 @@ for(var _i = 0; _i < _sfx_list_length; _i++)
 {
 	//play sound
 	var _sfx_value = ds_list_find_value(sfx_list, _i);
-	play_sfx(_sfx_value.sfx, _sfx_value.loop, _sfx_vol * _sfx_value.volume_multiplier, _sfx_value.pitch, _sfx_value.priority);
+	play_sfx(_sfx_value.sfx, _sfx_value.loop,
+	_sfx_vol * _sfx_value.volume_multiplier,
+	_sfx_value.pitch, _sfx_value.priority);
 }
 
 //reset variable

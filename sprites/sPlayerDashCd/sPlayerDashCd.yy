@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Player",
-    "path":"folders/Player.yy",
+    "name":"DashSprites",
+    "path":"folders/Player/DashSprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
