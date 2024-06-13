@@ -1,5 +1,5 @@
 //damage setup
-	get_damaged_create(20, true);
+	get_damaged_create(1, true);
 
 
 //variables for movement

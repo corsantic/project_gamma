@@ -30,8 +30,8 @@ if (_accept_key || _mouse_click) {
                 //start game
                 case MAIN_MENU.START_GAME:
 					//todo: saved room ?
-                    //room_goto_next();
-                    room_goto(Level_2);
+					room_goto_next();
+                    //room_goto(Level_2);
                     break;
 
                     //settings

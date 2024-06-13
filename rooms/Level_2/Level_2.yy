@@ -679,7 +679,6 @@
     {"name":"inst_6567EB80","path":"rooms/Level_2/Level_2.yy",},
     {"name":"inst_13E2BEDD","path":"rooms/Level_2/Level_2.yy",},
     {"name":"inst_3AFCD473","path":"rooms/Level_2/Level_2.yy",},
-    {"name":"inst_59C48C1B","path":"rooms/Level_2/Level_2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -1359,7 +1358,6 @@
         {"$GMRInstance":"","%Name":"inst_6567EB80","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6567EB80","objectId":{"name":"oBoomCreate","path":"objects/oBoomCreate/oBoomCreate.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":656.0,},
         {"$GMRInstance":"","%Name":"inst_13E2BEDD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_13E2BEDD","objectId":{"name":"oCrate","path":"objects/oCrate/oCrate.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":368.0,"y":592.0,},
         {"$GMRInstance":"","%Name":"inst_3AFCD473","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3AFCD473","objectId":{"name":"oBoomCreate","path":"objects/oBoomCreate/oBoomCreate.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":488.0,"y":592.0,},
-        {"$GMRInstance":"","%Name":"inst_59C48C1B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_59C48C1B","objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":608.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRLayer":"","%Name":"Tiles","depth":-2000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"$GMRTileLayer":"","%Name":"GroundTop","depth":-2000,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"GroundTop","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":90,"SerialiseWidth":120,"TileCompressedData":[

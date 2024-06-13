@@ -250,7 +250,9 @@ if(_shoot_key && shoot_timer <= 0)
 		
 		//boom vfx
 		create_animated_vfx(sSmallBoom, x, y, depth);
-				
+		
+		
+		
 		//destroy ourself
 		instance_destroy();
 	}
