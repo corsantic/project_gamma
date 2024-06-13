@@ -29,7 +29,9 @@ if (_accept_key || _mouse_click) {
             switch (pos) {
                 //start game
                 case MAIN_MENU.START_GAME:
-                    room_goto_next();
+					//todo: saved room ?
+                    //room_goto_next();
+                    room_goto(Level_2);
                     break;
 
                     //settings
