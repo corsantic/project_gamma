@@ -144,15 +144,16 @@ if(_is_screen_paused) exit;
 	face = round(aim_direction / _degree); 
 	
 	if face == 4 { face = 0; };
-	/*	Move direction of the player. 
-	*	Because we want to change player's sprite when dashing
-	*	According to move direction(Right 0/90 = 0, Up 90/90 = 1, Left 180/90 = 2, Down 270/90 = 3)
-	*/
-	if moving_direction == 4 { moving_direction = 0; };
+
 	//dash sprite change
 	if(is_dashing)
 	{
+		/*	Move direction of the player. 
+		*	Because we want to change player's sprite when dashing
+		*	According to move direction(Right 0/90 = 0, Up 90/90 = 1, Left 180/90 = 2, Down 270/90 = 3)
+		*/
 		moving_direction = round(move_direction/ _degree);
+		if moving_direction == 4 { moving_direction = 0; };
 		sprite_index = sprites_dash[moving_direction];
 	}
 	else{

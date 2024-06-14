@@ -1,5 +1,4 @@
 /// @contructor create_weapon()
-
 function CreateWeapon(	_sprite = sPistol,
 						_weapon_length = 0,
 						_bullet_object = oRegularBullet,

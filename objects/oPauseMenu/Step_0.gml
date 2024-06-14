@@ -30,8 +30,6 @@ if (pos < 0) {
 //using the options
 if (_accept_key || _mouse_click) {
 	var _start_menu_level = menu_level;
-	
-	
     switch (menu_level) {
         case MENU_LEVEL.MAIN:
             switch (pos) {
