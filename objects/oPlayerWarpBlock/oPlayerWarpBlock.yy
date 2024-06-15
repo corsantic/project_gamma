@@ -9,8 +9,8 @@
   "name":"oPlayerWarpBlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interactable",
-    "path":"folders/Environment/Interactable.yy",
+    "name":"PlayerWarping",
+    "path":"folders/Environment/Interactable/PlayerWarping.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -38,5 +38,5 @@
     "name":"sWarpBlock",
     "path":"sprites/sWarpBlock/sWarpBlock.yy",
   },
-  "visible":true,
+  "visible":false,
 }

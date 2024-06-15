@@ -11,10 +11,13 @@
   "name":"oWarp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interactable",
-    "path":"folders/Environment/Interactable.yy",
+    "name":"PlayerWarping",
+    "path":"folders/Environment/Interactable/PlayerWarping.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oScreenPause",
+    "path":"objects/oScreenPause/oScreenPause.yy",
+  },
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

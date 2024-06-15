@@ -1,20 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"oPlayerWarpLocation",
+  "%Name":"oPlayerWarpTarget",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oPlayerWarpLocation",
+  "name":"oPlayerWarpTarget",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interactable",
-    "path":"folders/Environment/Interactable.yy",
+    "name":"PlayerWarping",
+    "path":"folders/Environment/Interactable/PlayerWarping.yy",
   },
   "parentObjectId":null,
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -32,9 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlayerWarp",
-    "path":"sprites/sPlayerWarp/sPlayerWarp.yy",
+    "name":"sPlayerWarpTarget",
+    "path":"sprites/sPlayerWarpTarget/sPlayerWarpTarget.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

@@ -5,6 +5,12 @@ enum ENEMY_STATE{
 	DEATH
 }
 
+enum PLAYER_STATE
+{
+	PAUSE,
+	MOVING
+}
+
 enum BULLET_STATE
 {
 	NOT_MOVING,
@@ -30,6 +36,16 @@ enum SETTINGS_MENU
 	BRIGHTNESS,
 	CONTROL,
 	BACK
+}
+//According to face 
+//direction(Right 0/90 = 0, Up 90/90 = 1, Left 180/90 = 2, Down 270/90 = 3)
+enum DIRECTION
+{
+	RIGHT = 0,
+	UP,
+	LEFT,
+	DOWN,
+	OUT
 }
 
 

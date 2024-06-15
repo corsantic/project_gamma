@@ -1,1 +1,0 @@
-ds_list_destroy(global.warp_object_positions);

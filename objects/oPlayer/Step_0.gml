@@ -8,6 +8,19 @@ var _shoot_key = global.shoot_key;
 var _swap_key_pressed = global.swap_key_pressed;
 var _start_key_pressed = global.start_key_pressed;
 
+var _degree = 90;
+
+if(instance_exists(oWarp))
+{
+	image_index = 0;
+	sprite_index = sprites_idle[face];
+	aim_direction = face * _degree;
+	center_y = y + center_y_offset;
+	
+}
+
+
+
 #region pause game
 //pause menu
 if(_start_key_pressed)
@@ -41,10 +54,17 @@ if(_is_screen_paused) exit;
 	var _input_level = point_distance(0, 0, _horizontal_key, _vertical_key); 
 	_input_level = clamp(_input_level, 0, 1);
 	_speed = move_speed * _input_level;
+	if(state == PLAYER_STATE.PAUSE){
+		x_speed = 0;
+		y_speed = 0;
+	}
+	else
+	{
+		x_speed = lengthdir_x(_speed, move_direction);
+		y_speed = lengthdir_y(_speed, move_direction);
+	}
 	
-	x_speed = lengthdir_x(_speed, move_direction);
-	y_speed = lengthdir_y(_speed, move_direction);
-	
+
 	//collisions
 	if place_meeting(x + x_speed, y, oWall)
 	{
@@ -118,7 +138,6 @@ if(_is_screen_paused) exit;
 		create_screen_pause_timed(25);
 	}
 #endregion
-
 #region player aiming
 	center_y = y + center_y_offset;
 	center_x = x + center_x_offset;
@@ -140,25 +159,24 @@ if(_is_screen_paused) exit;
 #endregion
 #region sprite control
 	//make sure the player is facing the correct direction
-	var _degree = 90;
+
 	face = round(aim_direction / _degree); 
 	
-	if face == 4 { face = 0; };
+	if face == DIRECTION.OUT { face = DIRECTION.RIGHT; };
 
 	//dash sprite change
 	if(is_dashing)
 	{
 		/*	Move direction of the player. 
 		*	Because we want to change player's sprite when dashing
-		*	According to move direction(Right 0/90 = 0, Up 90/90 = 1, Left 180/90 = 2, Down 270/90 = 3)
 		*/
 		moving_direction = round(move_direction/ _degree);
-		if moving_direction == 4 { moving_direction = 0; };
+		if moving_direction ==  DIRECTION.OUT { moving_direction = DIRECTION.RIGHT; };
 		sprite_index = sprites_dash[moving_direction];
 	}
 	else{
 		//set the player sprite
-		mask_index = sprites[3];
+		mask_index = sprites[DIRECTION.DOWN];
 		
 		if(x_speed == 0 && y_speed == 0)
 		{
@@ -208,8 +226,9 @@ if(_shoot_key && shoot_timer <= 0)
 	
 	//shooting
 		//create the bullet
-		var _x_offset = lengthdir_x(weapon.length + weapon_offset_distance, aim_direction);
-		var _y_offset = lengthdir_y(weapon.length + weapon_offset_distance, aim_direction);
+		var _weapon_net_length = weapon.length + weapon_offset_distance;
+		var _x_offset = lengthdir_x(_weapon_net_length, aim_direction);
+		var _y_offset = lengthdir_y(_weapon_net_length, aim_direction);
 		
 		var _spread = weapon.spread;
 		var _spread_div = _spread / max(weapon.bullet_num - 1, 1);
@@ -221,14 +240,19 @@ if(_shoot_key && shoot_timer <= 0)
 		ds_list_add(oSFX.sfx_list, new CreateSFX(weapon.sound_effect));
 		
 		//create weapon flash
-		create_animated_vfx(weapon.flash_sprite, _weapon_tip_x, _weapon_tip_y, depth - 10, aim_direction);
+		create_animated_vfx(weapon.flash_sprite,
+							_weapon_tip_x,
+							_weapon_tip_y,
+							depth - 10,
+							aim_direction);
 		
 		
 		//create the correct number of bullets
 		for(var _i = 0; _i < weapon.bullet_num; _i++)
 		{
 			
-			var _bullet_instance = instance_create_depth(_weapon_tip_x, _weapon_tip_y, depth, weapon.bullet);
+			var _bullet_instance = instance_create_depth(_weapon_tip_x, _weapon_tip_y,
+														depth, weapon.bullet);
 	
 			//change the bullet's direction
 			with(_bullet_instance)
@@ -242,7 +266,6 @@ if(_shoot_key && shoot_timer <= 0)
 		}
 }
 #endregion
-
 #region death / gameover
 	if(hp <= 0)
 	{	

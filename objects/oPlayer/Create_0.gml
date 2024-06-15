@@ -1,6 +1,7 @@
 //damage setup
 	get_damaged_create(20, true);
-
+//player state
+	state = PLAYER_STATE.MOVING;
 
 //variables for movement
 	move_direction = 0;
@@ -26,8 +27,8 @@
 	aim_direction = 0;
 
 
-	face = 3;
-	moving_direction = 3;
+	face = DIRECTION.DOWN;
+	moving_direction = DIRECTION.DOWN;
 	sprites = [sPlayerRightRun, sPlayerUpRun, sPlayerLeftRun, sPlayerDownRun];
 	sprites_idle = [sPlayerRightIdle, sPlayerUpIdle, sPlayerLeftIdle, sPlayerDownIdle];
 	sprites_dash = [sPlayerRightDash, sPlayerUpDash, sPlayerLeftDash, sPlayerDownDash];

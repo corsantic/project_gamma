@@ -59,7 +59,10 @@ switch(state)
 				var _cam_bottom = _cam_top + camera_get_view_height(_cam);
 			
 				// only add to timer if onscreen
-				if(bbox_right > _cam_left && bbox_left < _cam_right && bbox_bottom > _cam_top && bbox_top < _cam_bottom)
+				if(	bbox_right > _cam_left 
+					&& bbox_left < _cam_right 
+					&& bbox_bottom > _cam_top 
+					&& bbox_top < _cam_bottom)
 				{	
 					shoot_timer++;
 				}
@@ -92,22 +95,29 @@ switch(state)
 			
 			//shoot a bullet
 				shoot_timer++;
+				var _bullet_x = x + bullet_x_offset * face_x_scale;
+				var _bullet_y = y + bullet_y_offset;
 				//create bullet
 				if(shoot_timer == 1)
 				{
 					
-					bullet_instance = instance_create_depth(x + bullet_x_offset * face, y + bullet_y_offset, depth, oEnemyBullet);
+					bullet_instance = instance_create_depth(_bullet_x,
+										_bullet_y,
+										depth,
+										oEnemyBullet);
 				}
 				
-				if (shoot_timer <= windup_time && instance_exists(bullet_instance))
+				if(	shoot_timer <= windup_time
+					&& instance_exists(bullet_instance))
 				{
-					bullet_instance.x = x + bullet_x_offset * face;
-					bullet_instance.y = y + bullet_y_offset;
+					bullet_instance.x = _bullet_x;
+					bullet_instance.y = _bullet_y;
 				}
 				
 				
 				//shoot the bullet after the windup time is over
-				if(shoot_timer == windup_time && instance_exists(bullet_instance))
+				if(	shoot_timer == windup_time 
+					&& instance_exists(bullet_instance))
 				{
 					//set out bullet's state to shooting state
 					bullet_instance.state = BULLET_STATE.SHOOTING;
@@ -138,7 +148,8 @@ switch(state)
 				
 				instance_destroy();
 				
-				if(global.enemy_kill_count mod 30 == 0 || global.enemy_kill_count == global.enemy_room_max)
+				if(	global.enemy_kill_count mod 30 == 0 
+					|| global.enemy_kill_count == global.enemy_room_max)
 				{
 					//create item
 					instance_create_depth(x, y, depth, oHeart);
@@ -166,9 +177,9 @@ switch(state)
 	//get the correct face
 		if(dir > 90 && dir < 270)
 		{ 
-			face = -1;
+			face_x_scale = -1;
 		}
-		else { face = 1;}
+		else { face_x_scale = 1;}
 	//collisions
 	
 		//wall collision
