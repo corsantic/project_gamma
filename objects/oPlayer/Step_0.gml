@@ -221,6 +221,9 @@ if(_shoot_key && shoot_timer <= 0)
 	//reset the timer
 	shoot_timer = weapon.cooldown;
 	
+	
+	weapon.ammo.shoot();
+
 	//camera shake
 	camera_shake(weapon.shake);
 	

@@ -9,8 +9,8 @@
   "name":"oWeaponPickup",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pickups",
-    "path":"folders/Environment/Pickups.yy",
+    "name":"Weapons",
+    "path":"folders/Environment/Pickups/Weapons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

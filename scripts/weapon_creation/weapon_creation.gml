@@ -8,7 +8,8 @@ function CreateWeapon(	_sprite = sPistol,
 						_pickup_sprite = sShotgunPickup,
 						_shake = 1,
 						_flash_sprite = sShootFlash,
-						_sound_effect = sfxShotgunShot) 
+						_sound_effect = sfxShotgunShot,
+						_ammo = new AmmoCreation(10, 0, 30, 50, false)) 
 constructor
 {
 	sprite = _sprite;
@@ -21,11 +22,12 @@ constructor
 	shake = _shake;
 	flash_sprite = _flash_sprite;
     sound_effect = _sound_effect;
+	ammo = _ammo;
+	
 }
 
 // the player's weapon inventory
 global.PlayerWeapons = array_create(0);
-
 
 //the weapons
 global.WeaponList = {
@@ -39,7 +41,8 @@ global.WeaponList = {
 		sPistolPickup,
 		0.5,
 		sShootFlash,
-		sfxPistolShot
+		sfxPistolShot,
+		new AmmoCreation(0, 0, 0, 0, true)
 	),
 	shotgun: new CreateWeapon(
 		sShotgun,
@@ -51,7 +54,8 @@ global.WeaponList = {
 		sShotgunPickup,
 		1.5,
 		sShootFlash,
-		sfxShotgunShot
+		sfxShotgunShot,
+		new AmmoCreation(7, 0, 7, 50, false)
 		),
 	ak47: new CreateWeapon(
 		sAk47,
@@ -63,7 +67,8 @@ global.WeaponList = {
 		sAk47Pickup,
 		0.8,
 		sShootFlash,
-		sfxAk47Shot
+		sfxAk47Shot,
+		new AmmoCreation(30, 0, 30, 120, false)
 		)
 
 }

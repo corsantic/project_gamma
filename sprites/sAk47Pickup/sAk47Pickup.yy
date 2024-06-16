@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Pickups",
-    "path":"folders/Guns/Pickups.yy",
+    "name":"Weapons",
+    "path":"folders/Environment/Pickups/Weapons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

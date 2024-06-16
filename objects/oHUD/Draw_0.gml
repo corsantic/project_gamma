@@ -43,6 +43,16 @@ if (instance_exists(oPlayer))
 		draw_text(_enemy_count_hud_x + 37, _enemy_count_hud_y + 3, +"/" +string(global.enemy_room_max))
 
 	#endregion
+	
+	#region draw the ammo count
+		var _ammo_count_offset = sprite_get_height(sEnemyCountHUD) + 4
+		var _ammo_hud_x = _hud_x;
+		var _ammo_hud_y = _enemy_count_hud_y + _ammo_count_offset;
+		draw_text(_ammo_hud_x + 19, _ammo_hud_y + 3, string(oPlayer.weapon.ammo.remaining_count))
+		draw_text(_ammo_hud_x + 37, _ammo_hud_y + 3, +"/" +string(oPlayer.weapon.ammo.spare_count))
+	
+	
+	#endregion
 }
 
 

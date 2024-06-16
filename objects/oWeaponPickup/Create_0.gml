@@ -28,6 +28,6 @@ image_index = 0;
 
 var _is_player_contains_weapon =  array_contains(global.PlayerWeapons, weapon);
 
-if(_is_player_contains_weapon)
-	instance_destroy();
+//if(_is_player_contains_weapon)
+//	instance_destroy();
 	

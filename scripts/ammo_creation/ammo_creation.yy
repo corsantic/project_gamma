@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"ammo_creation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ammo_creation",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
