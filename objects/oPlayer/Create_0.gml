@@ -45,3 +45,5 @@
 	weapon = global.PlayerWeapons[selected_weapon];
 //reload
 	reload_timer = 0;
+	is_reloading = false;
+	reload_cancel = false;

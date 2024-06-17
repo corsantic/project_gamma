@@ -20,8 +20,6 @@ if(instance_exists(oWarp))
 	
 }
 
-
-
 #region pause game
 //pause menu
 if(_start_key_pressed)
@@ -123,6 +121,7 @@ if(_is_screen_paused) exit;
 	
 	
 #endregion
+
 #region get damaged
 	if (get_damaged(oDamagePlayer, true))
 	{
@@ -204,7 +203,7 @@ if(_is_screen_paused) exit;
 	
 		//change the selection and wrap around
 		selected_weapon++;
-		
+		reload_cancel = true;
 		if(selected_weapon >= array_length(_playerWeapons)) { selected_weapon = 0;}
 
 	}
@@ -215,18 +214,55 @@ if(_is_screen_paused) exit;
 
 #endregion
 #region reload
-
-	if(reload_timer > 0) { reload_timer--; }
-	if((_reload_key_pressed || weapon.ammo.remaining_count <= 0) && reload_timer <= 0)
+if(reload_cancel == true)
+{
+	reload_timer = 0;
+	is_reloading = false;
+	stop_sfx(sfxReload);
+	reload_cancel = false;
+}
+else
+{
+	if(	(_reload_key_pressed || weapon.ammo.is_magazine_empty()) 
+		&& weapon.ammo.spare_count > 0 
+		&& reload_timer <= 0 
+		&& !is_reloading)
 	{
-		reload_timer = weapon.ammo.reload_cooldown;
-		weapon.ammo.reload();
+		reload_timer = weapon.ammo.reload_time;	
+		play_sfx(sfxReload, true);
+		is_reloading = true;
 	}
+	
+	// Handle ongoing reload process
+	if (reload_timer > 0) {
+	    reload_timer--;
+	    // Check if reload is finished
+	    if (reload_timer <= 0 && is_reloading) {
+	        // Perform actual reload logic
+	        var _is_reloaded = weapon.ammo.reload();
+	        if (_is_reloaded) {
+	            // Play reload end sound
+	            play_sfx(sfxWeaponPickup);
+	        }
+			stop_sfx(sfxReload);
+			is_reloading = false;
+	    }
+	} else {
+	    // Ensure to stop reload sound if timer is not active
+	    if (is_reloading) {
+	        stop_sfx(sfxReload);
+	        is_reloading = false;
+	    }
+	}
+
+}
+
+
 #endregion
 #region shoot the weapon
 if(shoot_timer > 0) { shoot_timer--; }
 
-if(_shoot_key && shoot_timer <= 0 && reload_timer <= 0  && !weapon.ammo.is_magazine_empty())
+if(_shoot_key && shoot_timer <= 0 && reload_timer <= 0 && !weapon.ammo.is_magazine_empty())
 {
 	//reset the timer
 	shoot_timer = weapon.cooldown;

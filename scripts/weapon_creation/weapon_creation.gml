@@ -55,7 +55,7 @@ global.WeaponList = {
 		1.5,
 		sShootFlash,
 		sfxShotgunShot,
-		new AmmoCreation(7, 0, 7, 60, false, 30, 30)
+		new AmmoCreation(7, 0, 7, 60, false, 3* game_get_speed(gamespeed_fps), 30)
 		),
 	ak47: new CreateWeapon(
 		sAk47,

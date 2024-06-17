@@ -6,16 +6,16 @@ function AmmoCreation(	_remaining_count,
 						_magazine_size,
 						_max_count,
 						_is_infinite = false,
-						_reload_cooldown = 5,
+						_reload_time = 5,
 						_add_ammo_count = 10)
 constructor
 {
 	remaining_count = _remaining_count;
 	magazine_size = _magazine_size;
 	max_count = _max_count;
-	spare_count = clamp(_spare_count, 0, _max_count);
+	spare_count = clamp(_spare_count, _add_ammo_count - _remaining_count , _max_count);
 	is_infinite = _is_infinite;
-	reload_cooldown = _reload_cooldown;
+	reload_time = _reload_time;
 	add_ammo_count = _add_ammo_count;
 
 	//@description Add ammo to remaining_count
@@ -40,7 +40,7 @@ constructor
 	
 	static reload = function()
 	{
-		if(is_infinite || remaining_count == magazine_size) return;
+		if(is_infinite || remaining_count == magazine_size || spare_count == 0) return false;
 		
 		var _reload_count = magazine_size - remaining_count;
 		
@@ -54,6 +54,7 @@ constructor
 		remaining_count += _reload_count;
 		
 		spare_count = clamp(spare_count, 0, max_count);
+		return true;
 	}
 	
 	static is_magazine_empty = function()
