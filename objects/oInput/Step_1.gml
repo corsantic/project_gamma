@@ -14,6 +14,7 @@ if (global.controller_mode)
 			global.up_key = gamepad_button_check(_game_pad, gp_padu);
 			global.down_key = gamepad_button_check(_game_pad, gp_padd);
 			global.dash_key_pressed = gamepad_button_check_pressed(_game_pad, gp_shoulderl);
+			global.reload_key_pressed = gamepad_button_check_pressed(_game_pad, gp_shoulderr);
 
 			global.xasis_left = gamepad_axis_value(_game_pad, gp_axislh) + (global.right_key - global.left_key);
 			global.yasis_left = gamepad_axis_value(_game_pad, gp_axislv) + (global.down_key - global.up_key);
@@ -46,7 +47,8 @@ else
 		global.up_key = keyboard_check(ord("W"));
 		global.down_key = keyboard_check(ord("S"));
 		global.dash_key_pressed = keyboard_check_pressed(vk_space);
-
+		global.reload_key_pressed = keyboard_check_pressed(ord("R"));
+		
 		global.xasis_left = global.right_key - global.left_key;
 		global.yasis_left = global.down_key - global.up_key;
 

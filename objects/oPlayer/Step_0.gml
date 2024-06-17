@@ -7,6 +7,7 @@ var _dash_key_pressed = global.dash_key_pressed;
 var _shoot_key = global.shoot_key;
 var _swap_key_pressed = global.swap_key_pressed;
 var _start_key_pressed = global.start_key_pressed;
+var _reload_key_pressed = global.reload_key_pressed;
 
 var _degree = 90;
 
@@ -213,15 +214,23 @@ if(_is_screen_paused) exit;
 	
 
 #endregion
+#region reload
+
+	if(reload_timer > 0) { reload_timer--; }
+	if((_reload_key_pressed || weapon.ammo.remaining_count <= 0) && reload_timer <= 0)
+	{
+		reload_timer = weapon.ammo.reload_cooldown;
+		weapon.ammo.reload();
+	}
+#endregion
 #region shoot the weapon
 if(shoot_timer > 0) { shoot_timer--; }
 
-if(_shoot_key && shoot_timer <= 0)
+if(_shoot_key && shoot_timer <= 0 && reload_timer <= 0  && !weapon.ammo.is_magazine_empty())
 {
 	//reset the timer
 	shoot_timer = weapon.cooldown;
-	
-	
+	//shoot and substract ammo
 	weapon.ammo.shoot();
 
 	//camera shake

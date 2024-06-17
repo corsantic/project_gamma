@@ -12,9 +12,10 @@ global.yasis_right = 0;
 
 global.dash_key_pressed = 0;
 global.shoot_key = 0;
+global.reload_key_pressed = 0;
 global.swap_key_pressed = 0;
 
-global.start_key_pressed = 0;
+global.start_key_pressed = 0
 
 //controller option
 global.controller_mode = false;

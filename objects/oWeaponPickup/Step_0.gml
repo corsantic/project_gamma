@@ -1,8 +1,6 @@
 //float in place
 float_direction += float_speed;
-y = ystart + dsin(float_direction)*1; 
-
-
+y = ystart + dsin(float_direction)*1;
 
 //add weapon to player's list
 var _is_player_contains_weapon = array_contains(global.PlayerWeapons,weapon);
@@ -29,7 +27,7 @@ if (place_meeting(x, y, oPlayer))
 		}
 		else
 		{
-			weapon.ammo.add_ammo(10);
+			weapon.ammo.add_ammo();
 		}
 		
 		//instance destroy
