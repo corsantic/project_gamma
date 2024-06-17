@@ -242,7 +242,7 @@ else
 	        var _is_reloaded = weapon.ammo.reload();
 	        if (_is_reloaded) {
 	            // Play reload end sound
-	            play_sfx(sfxWeaponPickup);
+	            play_sfx(sfxReloadDone);
 	        }
 			stop_sfx(sfxReload);
 			is_reloading = false;

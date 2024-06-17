@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.032381,
+  "duration":0.464399,
   "name":"sfxReloadDone",
   "parent":{
     "name":"SFX",

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.464399,
+  "duration":0.450667,
   "name":"sfxWeaponPickup",
   "parent":{
     "name":"SFX",
