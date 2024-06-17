@@ -214,49 +214,18 @@ if(_is_screen_paused) exit;
 
 #endregion
 #region reload
-if(reload_cancel == true)
-{
-	reload_timer = 0;
-	is_reloading = false;
-	stop_sfx(sfxReload);
-	reload_cancel = false;
+if (reload_cancel) {
+    alarm[0] = -1; // Cancel the reload alarm
+    is_reloading = false;
+    stop_sfx(sfxReload);
+    reload_cancel = false;
+} else {
+    if ((_reload_key_pressed || weapon.ammo.is_magazine_empty()) && weapon.ammo.spare_count > 0 && alarm[0] == -1 && !is_reloading) {
+        alarm[0] = weapon.ammo.reload_time; // Set the alarm to the reload time
+        play_sfx(sfxReload, true);
+        is_reloading = true;
+    }
 }
-else
-{
-	if(	(_reload_key_pressed || weapon.ammo.is_magazine_empty()) 
-		&& weapon.ammo.spare_count > 0 
-		&& reload_timer <= 0 
-		&& !is_reloading)
-	{
-		reload_timer = weapon.ammo.reload_time;	
-		play_sfx(sfxReload, true);
-		is_reloading = true;
-	}
-	
-	// Handle ongoing reload process
-	if (reload_timer > 0) {
-	    reload_timer--;
-	    // Check if reload is finished
-	    if (reload_timer <= 0 && is_reloading) {
-	        // Perform actual reload logic
-	        var _is_reloaded = weapon.ammo.reload();
-	        if (_is_reloaded) {
-	            // Play reload end sound
-	            play_sfx(sfxReloadDone);
-	        }
-			stop_sfx(sfxReload);
-			is_reloading = false;
-	    }
-	} else {
-	    // Ensure to stop reload sound if timer is not active
-	    if (is_reloading) {
-	        stop_sfx(sfxReload);
-	        is_reloading = false;
-	    }
-	}
-
-}
-
 
 #endregion
 #region shoot the weapon
