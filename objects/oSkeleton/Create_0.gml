@@ -9,8 +9,6 @@ y_speed = 0;
 
 face_x_scale = 1;
 
-//state machine 
-state = ENEMY_STATE.CHASING;
 	//shooting state
 	cooldown_time = 5 * 60;
 	shoot_timer = irandom(cooldown_time);
@@ -22,7 +20,7 @@ state = ENEMY_STATE.CHASING;
 	bullet_y_offset= -8;
 	//spawn state
 	fade_speed = 1/15;
-	emerge_speed = .35;
+	emerge_speed = .45;
 	
 	
 	

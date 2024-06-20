@@ -49,7 +49,7 @@ global.WeaponList = {
 		sprite_get_bbox_right(sShotgun) - sprite_get_xoffset(sShotgun),
 		oMainPellet,
 		20,
-		7,
+		10,
 		70,
 		sShotgunPickup,
 		1.5,

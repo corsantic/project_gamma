@@ -1,3 +1,3 @@
-get_damaged_create(5, false);
+get_damaged_create(8, false);
 
 depth = -bbox_top;
