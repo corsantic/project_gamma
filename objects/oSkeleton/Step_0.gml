@@ -154,7 +154,7 @@ switch(state)
 					//create item
 					instance_create_depth(x, y, depth, oHeart);
 				}
-				if(global.enemy_kill_count mod 2 == 0)
+				if(global.enemy_kill_count mod 15 == 0)
 				{
 					//create weapon
 					var _instance = instance_create_depth(x, y, depth, oWeaponPickup);
