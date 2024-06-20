@@ -154,6 +154,15 @@ switch(state)
 					//create item
 					instance_create_depth(x, y, depth, oHeart);
 				}
+				if(global.enemy_kill_count mod 2 == 0)
+				{
+					//create weapon
+					var _instance = instance_create_depth(x, y, depth, oWeaponPickup);
+					with(_instance)
+					{
+						image_index = irandom_range(1, image_number - 1);
+					}
+				}
 				//boom vfx
 				create_animated_vfx(sSmallBoom, x, y, depth);
 				
@@ -161,7 +170,6 @@ switch(state)
 			
 		#endregion
 	break;
-	
 
 	
 	

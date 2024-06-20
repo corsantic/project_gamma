@@ -22,9 +22,11 @@ constructor
 	//@param	_add_count		add count when ammo picked up from a gun
 	static add_ammo = function(_ammo_count = add_ammo_count)
 	{
-		if(is_infinite) return;
+		if(is_infinite) return false;
+		if(spare_count == max_count) return false;
 		spare_count += _ammo_count;
 		spare_count = clamp(spare_count, 0, max_count);
+		return true;
 	}
 	
 	static shoot = function()
