@@ -220,7 +220,10 @@ if (reload_cancel) {
     stop_sfx(sfxReload);
     reload_cancel = false;
 } else {
-    if ((_reload_key_pressed || weapon.ammo.is_magazine_empty()) && weapon.ammo.spare_count > 0 && alarm[0] == -1 && !is_reloading) {
+    if ((_reload_key_pressed || weapon.ammo.is_magazine_empty()) 
+		&& weapon.ammo.spare_count > 0 
+		&& alarm[0] == -1 
+		&& !is_reloading) {
         alarm[0] = weapon.ammo.reload_time; // Set the alarm to the reload time
         play_sfx(sfxReload, true);
         is_reloading = true;
@@ -231,7 +234,7 @@ if (reload_cancel) {
 #region shoot the weapon
 if(shoot_timer > 0) { shoot_timer--; }
 
-if(_shoot_key && shoot_timer <= 0 && reload_timer <= 0 && !weapon.ammo.is_magazine_empty())
+if(_shoot_key && shoot_timer <= 0 && !is_reloading && !weapon.ammo.is_magazine_empty())
 {
 	//reset the timer
 	shoot_timer = weapon.cooldown;
