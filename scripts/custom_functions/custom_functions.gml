@@ -34,7 +34,7 @@ function draw_player_weapon()
 	//damage create event
 	/// @desc Create event for damage 
 	/// @param {real} [_hp]=10 Hp of the enemy
-	function get_damaged_create(_hp = 10, _iframes = false)
+	function get_damaged_create(_hp = 5, _iframes = false)
 	{
 		max_hp = _hp;
 		hp = _hp;
