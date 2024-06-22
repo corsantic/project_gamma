@@ -3,6 +3,9 @@ var _cam = view_camera[0];
 //get the cam coordinates
 var _cam_x= camera_get_view_x(_cam);
 var _cam_y= camera_get_view_y(_cam);
+var _cam_height = camera_get_view_height(_cam);
+var _cam_width = camera_get_view_width(_cam);
+
 //central HUD coordinates
 var _padding = 8;
 var _hud_x = _cam_x + _padding;
@@ -82,6 +85,46 @@ if (instance_exists(oPlayer))
 		draw_text(_ammo_hud_x + 20, _ammo_hud_y, + "/" + _ammo_spare);
 	
 	
+	#endregion
+	
+	#region draw weapons to ui
+		var _x_scale = 2;
+		var _y_scale = 2;
+		var _weapon_ui_x = (_cam_x + _cam_width/2 - (sprite_get_width(sPlayerWeapons)/2) * _x_scale)  ;
+		var _weapon_ui_y = (_cam_y + camera_get_view_height(_cam) - (sprite_get_height(sPlayerWeapons)) * _y_scale);
+		//draw the background/box
+		draw_sprite_ext(sPlayerWeapons, 0, _weapon_ui_x, _weapon_ui_y, _x_scale, _y_scale, 0, c_white, 1);
+		
+		var _player_weapons = global.PlayerWeapons;
+		
+		var _weapon_sprite_offset = 3;
+		for(var _i = 0; _i < array_length(_player_weapons); _i++)
+		{
+			draw_sprite_ext(sPlayerWeapons,
+						1,
+						_weapon_ui_x,
+						_weapon_ui_y + 5,
+						_x_scale,
+						_y_scale,
+						0, c_white, 1);
+							
+			var _weapon_sprite = _player_weapons[_i].pickup_sprite;
+			
+			// Calculate the offset for this weapon, adding some spacing
+			var _current_offset = _weapon_sprite_offset * _x_scale + (_i * 5); // 10 is the spacing between weapons, adjust as needed
+    
+			draw_sprite_ext(_weapon_sprite,
+							0,
+							_weapon_ui_x + _current_offset,
+							_weapon_ui_y + 5,
+							_x_scale,
+							_y_scale,
+							0, c_white, 1);
+							
+			// Update the offset for the next weapon
+			_weapon_sprite_offset += sprite_get_width(_weapon_sprite);
+		}
+		
 	#endregion
 }
 

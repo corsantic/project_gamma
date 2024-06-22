@@ -197,26 +197,21 @@ if(_is_screen_paused) exit;
 #endregion
 #region weapon swapping
 	var _playerWeapons = global.PlayerWeapons;
-	var _weapon_selected_key = 0;
-	for (var i = 1; i <= array_length(_playerWeapons); i++) {
-		if (keyboard_check_pressed(ord(string(i)))) {
-		    _weapon_selected_key = i;
-		    break;
-		}
-	}
+	var _weapon_selected_key = global.weapon_selected_key;
+	
 	//cycle through weapons
 	if(_swap_down_key_pressed || _swap_up_key_pressed || _weapon_selected_key != 0)
 	{
-		
 		//change the selection and wrap around
-		if(_swap_up_key_pressed)
-			selected_weapon++;
-		if(_swap_down_key_pressed)
-			selected_weapon--;
+		if(_swap_up_key_pressed) selected_weapon++;
+		if(_swap_down_key_pressed) selected_weapon--;
 	
 		if(_weapon_selected_key != 0)
-		{
+		{	
+			// -1 because its start from 1
 			selected_weapon = _weapon_selected_key - 1;
+			// set back to zero after weapon selected 
+			global.weapon_selected_key = 0;
 		}
 		else
 		{
@@ -230,8 +225,6 @@ if(_is_screen_paused) exit;
 			}
 		}
 		reload_cancel = true;
-
-
 	}
 	
 	//set the new weapon

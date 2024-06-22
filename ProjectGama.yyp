@@ -151,6 +151,7 @@
     {"id":{"name":"sPlayerUpIdle","path":"sprites/sPlayerUpIdle/sPlayerUpIdle.yy",},},
     {"id":{"name":"sPlayerUpRun","path":"sprites/sPlayerUpRun/sPlayerUpRun.yy",},},
     {"id":{"name":"sPlayerWarpTarget","path":"sprites/sPlayerWarpTarget/sPlayerWarpTarget.yy",},},
+    {"id":{"name":"sPlayerWeapons","path":"sprites/sPlayerWeapons/sPlayerWeapons.yy",},},
     {"id":{"name":"sPumpkinBullet","path":"sprites/sPumpkinBullet/sPumpkinBullet.yy",},},
     {"id":{"name":"sPumpkinDown","path":"sprites/sPumpkinDown/sPumpkinDown.yy",},},
     {"id":{"name":"sPumpkinLeft","path":"sprites/sPumpkinLeft/sPumpkinLeft.yy",},},

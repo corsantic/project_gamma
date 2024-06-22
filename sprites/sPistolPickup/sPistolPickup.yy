@@ -13,9 +13,9 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"95b0f667-9e32-4cc7-ac55-2e95194fd221","name":"95b0f667-9e32-4cc7-ac55-2e95194fd221","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"9790817e-dfad-4076-a602-3bb2752a5095","name":"9790817e-dfad-4076-a602-3bb2752a5095","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"22393cb1-c6c7-485e-bec3-9d1abaf3f92f","name":"22393cb1-c6c7-485e-bec3-9d1abaf3f92f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"a28e7515-8963-43e5-b990-ee4b41f53edc","name":"a28e7515-8963-43e5-b990-ee4b41f53edc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"01dcf98e-db1b-4eae-9499-a0431d6ae53e","name":"01dcf98e-db1b-4eae-9499-a0431d6ae53e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":1,
   "gridY":1,
@@ -26,7 +26,7 @@
   ],
   "name":"sPistolPickup",
   "nineSlice":null,
-  "origin":9,
+  "origin":0,
   "parent":{
     "name":"Weapons",
     "path":"folders/Environment/Pickups/Weapons.yy",
@@ -75,20 +75,20 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"95b0f667-9e32-4cc7-ac55-2e95194fd221","path":"sprites/sPistolPickup/sPistolPickup.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"042f03b2-12d0-46cc-9cdc-9c8d27e6c02a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9790817e-dfad-4076-a602-3bb2752a5095","path":"sprites/sPistolPickup/sPistolPickup.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"e076103b-3ab3-4a38-9803-8469662ac1ea","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"22393cb1-c6c7-485e-bec3-9d1abaf3f92f","path":"sprites/sPistolPickup/sPistolPickup.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"31aae55f-ac66-4d74-b2c6-a214701463fc","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"31aae55f-ac66-4d74-b2c6-a214701463fc","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a28e7515-8963-43e5-b990-ee4b41f53edc","path":"sprites/sPistolPickup/sPistolPickup.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"cc91dfec-f55f-4cd8-aced-951db7e8743e","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"01dcf98e-db1b-4eae-9499-a0431d6ae53e","path":"sprites/sPistolPickup/sPistolPickup.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"497494cc-7221-4979-b1e5-666f2a29be16","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"cc91dfec-f55f-4cd8-aced-951db7e8743e","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":3,
-    "yorigin":3,
+    "xorigin":0,
+    "yorigin":0,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

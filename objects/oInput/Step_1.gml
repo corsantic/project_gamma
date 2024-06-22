@@ -26,8 +26,6 @@ if (global.controller_mode)
 			global.xasis_right = gamepad_axis_value(_game_pad, gp_axisrh);
 			global.yasis_right = gamepad_axis_value(_game_pad, gp_axisrv);
 			
-			
-			
 			global.shoot_key =  gamepad_button_check(_game_pad, gp_shoulderrb);
 			global.swap_key_pressed = gamepad_button_check_pressed(_game_pad, gp_shoulderlb);
 
@@ -59,6 +57,12 @@ else
 		global.swap_down_key = mouse_wheel_down();
 
 		global.start_key_pressed = keyboard_check_pressed(vk_escape);
+		for (var _i = 1; _i  <= array_length(global.PlayerWeapons); _i ++) {
+			if (keyboard_check_pressed(ord(string(_i)))) {
+			    global.weapon_selected_key = _i;
+			    break;
+			}
+		}
 		
 	#endregion
 }

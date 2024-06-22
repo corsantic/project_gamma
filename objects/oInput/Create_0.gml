@@ -16,7 +16,7 @@ global.reload_key_pressed = 0;
 global.swap_key_pressed = 0;
 global.swap_down_key = 0;
 global.swap_up_key = 0;
-
+global.weapon_selected_key = 0;
 global.start_key_pressed = 0
 
 //controller option
