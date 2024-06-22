@@ -5,7 +5,8 @@ var _up_key = global.up_key;
 var _down_key = global.down_key;
 var _dash_key_pressed = global.dash_key_pressed;
 var _shoot_key = global.shoot_key;
-var _swap_key_pressed = global.swap_key_pressed;
+var _swap_down_key_pressed = global.swap_down_key;
+var _swap_up_key_pressed = global.swap_up_key;
 var _start_key_pressed = global.start_key_pressed;
 var _reload_key_pressed = global.reload_key_pressed;
 
@@ -196,15 +197,40 @@ if(_is_screen_paused) exit;
 #endregion
 #region weapon swapping
 	var _playerWeapons = global.PlayerWeapons;
-	
+	var _weapon_selected_key = 0;
+	for (var i = 1; i <= array_length(_playerWeapons); i++) {
+		if (keyboard_check_pressed(ord(string(i)))) {
+		    _weapon_selected_key = i;
+		    break;
+		}
+	}
 	//cycle through weapons
-	if(_swap_key_pressed)
+	if(_swap_down_key_pressed || _swap_up_key_pressed || _weapon_selected_key != 0)
 	{
-	
+		
 		//change the selection and wrap around
-		selected_weapon++;
+		if(_swap_up_key_pressed)
+			selected_weapon++;
+		if(_swap_down_key_pressed)
+			selected_weapon--;
+	
+		if(_weapon_selected_key != 0)
+		{
+			selected_weapon = _weapon_selected_key - 1;
+		}
+		else
+		{
+			if(selected_weapon < 0)
+			{	
+				selected_weapon = array_length(_playerWeapons) - 1;
+			}
+			if(selected_weapon >= array_length(_playerWeapons)) 
+			{ 
+				selected_weapon = 0;
+			}
+		}
 		reload_cancel = true;
-		if(selected_weapon >= array_length(_playerWeapons)) { selected_weapon = 0;}
+
 
 	}
 	
@@ -233,8 +259,10 @@ if (reload_cancel) {
 #endregion
 #region shoot the weapon
 if(shoot_timer > 0) { shoot_timer--; }
+var _is_shoot_ready_and_pressed = _shoot_key && shoot_timer <= 0;
 
-if(_shoot_key && shoot_timer <= 0 && !is_reloading && !weapon.ammo.is_magazine_empty())
+
+if(_is_shoot_ready_and_pressed && !is_reloading && !weapon.ammo.is_magazine_empty())
 {
 	//reset the timer
 	shoot_timer = weapon.cooldown;
@@ -285,6 +313,15 @@ if(_shoot_key && shoot_timer <= 0 && !is_reloading && !weapon.ammo.is_magazine_e
 			
 		}
 }
+else if (_is_shoot_ready_and_pressed && weapon.ammo.is_magazine_empty() && !is_reloading)
+{
+	//play empty magazine
+	alarm[1] = 2;
+}
+
+
+
+
 #endregion
 #region death / gameover
 	if(hp <= 0)

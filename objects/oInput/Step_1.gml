@@ -49,17 +49,22 @@ else
 		global.dash_key_pressed = keyboard_check_pressed(vk_space);
 		global.reload_key_pressed = keyboard_check_pressed(ord("R"));
 		
+		
 		global.xasis_left = global.right_key - global.left_key;
 		global.yasis_left = global.down_key - global.up_key;
 
 		global.shoot_key = mouse_check_button(mb_left);
 		global.swap_key_pressed = mouse_check_button_pressed(mb_right);
-
+		global.swap_up_key = mouse_wheel_up();
+		global.swap_down_key = mouse_wheel_down();
 
 		global.start_key_pressed = keyboard_check_pressed(vk_escape);
-
+		
 	#endregion
 }
+
+
+
 
 
 

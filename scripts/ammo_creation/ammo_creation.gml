@@ -64,8 +64,5 @@ constructor
 		if(!is_infinite && remaining_count <= 0) return true;
 		return false;
 	}
-	
-	
-
 
 }

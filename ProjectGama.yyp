@@ -12,8 +12,8 @@
   "Folders":[
     {"$GMFolder":"","%Name":"DamageObjects","folderPath":"folders/DamageObjects.yy","name":"DamageObjects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Skeleton","folderPath":"folders/Enemies/Skeleton.yy","name":"Skeleton","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Pumpkin","folderPath":"folders/Enemies/Pumpkin.yy","name":"Pumpkin","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Skeleton","folderPath":"folders/Enemies/Skeleton.yy","name":"Skeleton","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Environment","folderPath":"folders/Environment.yy","name":"Environment","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"EnemyRelated","folderPath":"folders/Environment/EnemyRelated.yy","name":"EnemyRelated","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Interactable","folderPath":"folders/Environment/Interactable.yy","name":"Interactable","resourceType":"GMFolder","resourceVersion":"2.0",},
