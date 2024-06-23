@@ -92,12 +92,12 @@ if (instance_exists(oPlayer))
 		var _y_scale = 2;
 		var _weapon_ui_x = (_cam_x + _cam_width/2 - (sprite_get_width(sPlayerWeapons)/2) * _x_scale)  ;
 		var _weapon_ui_y = (_cam_y + camera_get_view_height(_cam) - (sprite_get_height(sPlayerWeapons)) * _y_scale);
-		//draw the background/box
+		//draw the first line
 		draw_sprite_ext(sPlayerWeapons, 0, _weapon_ui_x, _weapon_ui_y, _x_scale, _y_scale, 0, c_white, 1);
 		
 		var _player_weapons = global.PlayerWeapons;
 		
-		var _weapon_sprite_offset = 3;
+		var _weapon_sprite_offset = 0;
 		
 		var _weapon_list = global.WeaponList;
 		var _total_weapons = variable_struct_get_names(global.WeaponList);
@@ -111,7 +111,7 @@ if (instance_exists(oPlayer))
 
 			for (var _k = 0; _k < _weapon_sprite_width; _k++)
 			{
-				var _background_offset = ((_k + 1) *_x_scale) + _weapon_between_offset;
+				var _background_offset = ((_k + (1*_x_scale))) + _weapon_between_offset;
 				//draw hud for current weapon
 				draw_sprite_ext(sPlayerWeapons,
 					1, 
@@ -121,17 +121,16 @@ if (instance_exists(oPlayer))
 					_y_scale,
 					0, c_white, 1);
 			}
-			
 			_weapon_between_offset += (_weapon_sprite_width + (_weapon_sprite_offset * _x_scale));
 		}
 		//draw last line
-		draw_sprite_ext(sPlayerWeapons,
-						0,
-						_weapon_ui_x + _weapon_between_offset,
-						_weapon_ui_y,
-						_x_scale,
-						_y_scale,
-						0, c_white, 1);
+		//draw_sprite_ext(sPlayerWeapons,
+		//				0,
+		//				_weapon_ui_x + _weapon_between_offset,
+		//				_weapon_ui_y,
+		//				_x_scale,
+		//				_y_scale,
+		//				0, c_white, 1);
 		
 		// draw weapons sprites for ui
 		for(var _i = 0; _i < array_length(_player_weapons); _i++)
@@ -139,7 +138,7 @@ if (instance_exists(oPlayer))
 			var _weapon_sprite = _player_weapons[_i].ui_sprite;
 			
 			// Calculate the offset for this weapon, adding some spacing
-			var _current_offset = _weapon_sprite_offset * _x_scale + (_i * 5); // 10 is the spacing between weapons, adjust as needed
+			var _current_offset = _weapon_sprite_offset * _x_scale; //+ (_i * 5);
     
 			draw_sprite_ext(_weapon_sprite,
 							0,

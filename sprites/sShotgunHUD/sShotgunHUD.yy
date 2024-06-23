@@ -3,7 +3,7 @@
   "%Name":"sShotgunHUD",
   "bboxMode":0,
   "bbox_bottom":15,
-  "bbox_left":0,
+  "bbox_left":1,
   "bbox_right":15,
   "bbox_top":0,
   "collisionKind":1,
