@@ -9,7 +9,8 @@ function CreateWeapon(	_sprite = sPistol,
 						_shake = 1,
 						_flash_sprite = sShootFlash,
 						_sound_effect = sfxShotgunShot,
-						_ammo = new AmmoCreation(10, 0, 30, 50, false, 10)) 
+						_ammo = new AmmoCreation(10, 0, 30, 50, false, 10),
+						_ui_sprite = sShotgunHUD) 
 constructor
 {
 	sprite = _sprite;
@@ -23,6 +24,7 @@ constructor
 	flash_sprite = _flash_sprite;
     sound_effect = _sound_effect;
 	ammo = _ammo;
+	ui_sprite = _ui_sprite;
 	
 }
 
@@ -42,7 +44,8 @@ global.WeaponList = {
 		0.5,
 		sShootFlash,
 		sfxPistolShot,
-		new AmmoCreation(0, 0, 0, 0, true, 0, 0)
+		new AmmoCreation(0, 0, 0, 0, true, 0, 0),
+		sPistolHUD
 	),
 	shotgun: new CreateWeapon(
 		sShotgun,
@@ -55,7 +58,8 @@ global.WeaponList = {
 		1.5,
 		sShootFlash,
 		sfxShotgunShot,
-		new AmmoCreation(12, 24, 12, 84, false, 1* game_get_speed(gamespeed_fps), 30)
+		new AmmoCreation(12, 24, 12, 84, false, 1* game_get_speed(gamespeed_fps), 30),
+		sShotgunHUD
 		//new AmmoCreation(3, 0, 12, 84, false, 1* game_get_speed(gamespeed_fps), 0)
 		),
 	ak47: new CreateWeapon(
@@ -69,7 +73,8 @@ global.WeaponList = {
 		0.8,
 		sShootFlash,
 		sfxAk47Shot,
-		new AmmoCreation(30, 60, 30, 150, false, 15, 30)
+		new AmmoCreation(30, 60, 30, 150, false, 15, 30),
+		sAk47HUD
 		)
 
 }

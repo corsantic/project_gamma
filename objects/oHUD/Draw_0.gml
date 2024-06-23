@@ -99,32 +99,32 @@ if (instance_exists(oPlayer))
 		
 		var _weapon_sprite_offset = 3;
 		
-		
 		var _weapon_list = global.WeaponList;
 		var _total_weapons = variable_struct_get_names(global.WeaponList);
 		var _weapon_between_offset = 0;
+		
 		for (var _j = 0; _j < array_length(_total_weapons); _j++)
 		{
 			var _key = _total_weapons[_j];
 			var _value = _weapon_list[$ _key];
-			var _weapon_sprite_width = sprite_get_width(_value.pickup_sprite) * _x_scale;
-			
-			//var _current_offset = _weapon_background_offset * _x_scale; // 10 is the spacing between weapons, adjust as needed
-			_weapon_between_offset += _weapon_sprite_width + _weapon_sprite_offset * _x_scale;
+			var _weapon_sprite_width = sprite_get_width(_value.ui_sprite) * _x_scale;
+
 			for (var _k = 0; _k < _weapon_sprite_width; _k++)
 			{
+				var _background_offset = ((_k + 1) *_x_scale) + _weapon_between_offset;
 				//draw hud for current weapon
 				draw_sprite_ext(sPlayerWeapons,
-					1,
-					_weapon_ui_x + (_k+1) *_x_scale,
+					1, 
+					_weapon_ui_x + _background_offset,
 					_weapon_ui_y,
 					_x_scale,
 					_y_scale,
 					0, c_white, 1);
 			}
-	
+			
+			_weapon_between_offset += (_weapon_sprite_width + (_weapon_sprite_offset * _x_scale));
 		}
-		
+		//draw last line
 		draw_sprite_ext(sPlayerWeapons,
 						0,
 						_weapon_ui_x + _weapon_between_offset,
@@ -133,9 +133,10 @@ if (instance_exists(oPlayer))
 						_y_scale,
 						0, c_white, 1);
 		
+		// draw weapons sprites for ui
 		for(var _i = 0; _i < array_length(_player_weapons); _i++)
 		{	
-			var _weapon_sprite = _player_weapons[_i].pickup_sprite;
+			var _weapon_sprite = _player_weapons[_i].ui_sprite;
 			
 			// Calculate the offset for this weapon, adding some spacing
 			var _current_offset = _weapon_sprite_offset * _x_scale + (_i * 5); // 10 is the spacing between weapons, adjust as needed
@@ -143,7 +144,7 @@ if (instance_exists(oPlayer))
 			draw_sprite_ext(_weapon_sprite,
 							0,
 							_weapon_ui_x + _current_offset,
-							_weapon_ui_y + 5,
+							_weapon_ui_y,
 							_x_scale,
 							_y_scale,
 							0, c_white, 1);
