@@ -98,16 +98,43 @@ if (instance_exists(oPlayer))
 		var _player_weapons = global.PlayerWeapons;
 		
 		var _weapon_sprite_offset = 3;
-		for(var _i = 0; _i < array_length(_player_weapons); _i++)
+		
+		
+		var _weapon_list = global.WeaponList;
+		var _total_weapons = variable_struct_get_names(global.WeaponList);
+		var _weapon_between_offset = 0;
+		for (var _j = 0; _j < array_length(_total_weapons); _j++)
 		{
-			draw_sprite_ext(sPlayerWeapons,
-						1,
-						_weapon_ui_x,
-						_weapon_ui_y + 5,
+			var _key = _total_weapons[_j];
+			var _value = _weapon_list[$ _key];
+			var _weapon_sprite_width = sprite_get_width(_value.pickup_sprite) * _x_scale;
+			
+			//var _current_offset = _weapon_background_offset * _x_scale; // 10 is the spacing between weapons, adjust as needed
+			_weapon_between_offset += _weapon_sprite_width + _weapon_sprite_offset * _x_scale;
+			for (var _k = 0; _k < _weapon_sprite_width; _k++)
+			{
+				//draw hud for current weapon
+				draw_sprite_ext(sPlayerWeapons,
+					1,
+					_weapon_ui_x + (_k+1) *_x_scale,
+					_weapon_ui_y,
+					_x_scale,
+					_y_scale,
+					0, c_white, 1);
+			}
+	
+		}
+		
+		draw_sprite_ext(sPlayerWeapons,
+						0,
+						_weapon_ui_x + _weapon_between_offset,
+						_weapon_ui_y,
 						_x_scale,
 						_y_scale,
 						0, c_white, 1);
-							
+		
+		for(var _i = 0; _i < array_length(_player_weapons); _i++)
+		{	
 			var _weapon_sprite = _player_weapons[_i].pickup_sprite;
 			
 			// Calculate the offset for this weapon, adding some spacing
