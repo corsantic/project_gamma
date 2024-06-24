@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"player_sprite_control",
+  "%Name":"boom",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_sprite_control",
+  "name":"boom",
   "parent":{
-    "name":"Player",
-    "path":"folders/Scripts/Player.yy",
+    "name":"Environment",
+    "path":"folders/Scripts/Environment.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

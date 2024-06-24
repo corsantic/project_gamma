@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_aiming",
   "parent":{
-    "name":"player",
-    "path":"folders/Scripts/player.yy",
+    "name":"Player",
+    "path":"folders/Scripts/Player.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -22,8 +22,7 @@
   "height":40,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"27fc3912-8909-4bb5-b7aa-0c6c0ada4525","blendMode":0,"displayName":"default","isLocked":false,"name":"27fc3912-8909-4bb5-b7aa-0c6c0ada4525","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"c5a2337a-86c6-4ba9-9ee8-e15e7ddd71a0","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"c5a2337a-86c6-4ba9-9ee8-e15e7ddd71a0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"7afbde71-7e3f-4132-afd1-fd9587bbbf68","blendMode":0,"displayName":"default","isLocked":false,"name":"7afbde71-7e3f-4132-afd1-fd9587bbbf68","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sPumpkinLeft",
   "nineSlice":null,
