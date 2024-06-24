@@ -90,10 +90,9 @@ if (instance_exists(oPlayer))
 	#region draw weapons to ui
 		var _x_scale = 2;
 		var _y_scale = 2;
-		var _weapon_ui_x = (_cam_x + _cam_width/2 - (sprite_get_width(sPlayerWeapons)/2) * _x_scale)  ;
+		var _weapon_ui_x = (_cam_x + _cam_width/2 - (sprite_get_width(sPlayerWeapons)/2) * _x_scale);
 		var _weapon_ui_y = (_cam_y + camera_get_view_height(_cam) - (sprite_get_height(sPlayerWeapons)) * _y_scale);
-		//draw the first line
-		draw_sprite_ext(sPlayerWeapons, 0, _weapon_ui_x, _weapon_ui_y, _x_scale, _y_scale, 0, c_white, 1);
+	
 		
 		var _player_weapons = global.PlayerWeapons;
 		
@@ -109,9 +108,9 @@ if (instance_exists(oPlayer))
 			var _value = _weapon_list[$ _key];
 			var _weapon_sprite_width = sprite_get_width(_value.ui_sprite) * _x_scale;
 
-			for (var _k = 0; _k < _weapon_sprite_width; _k++)
+			for (var _k = 0; _k < _weapon_sprite_width-1; _k++)
 			{
-				var _background_offset = ((_k + (1*_x_scale))) + _weapon_between_offset;
+				var _background_offset = ((_k)) + _weapon_between_offset;
 				//draw hud for current weapon
 				draw_sprite_ext(sPlayerWeapons,
 					1, 
@@ -120,26 +119,26 @@ if (instance_exists(oPlayer))
 					_x_scale,
 					_y_scale,
 					0, c_white, 1);
+				
 			}
 			_weapon_between_offset += (_weapon_sprite_width + (_weapon_sprite_offset * _x_scale));
 		}
-		//draw last line
-		//draw_sprite_ext(sPlayerWeapons,
-		//				0,
-		//				_weapon_ui_x + _weapon_between_offset,
-		//				_weapon_ui_y,
-		//				_x_scale,
-		//				_y_scale,
-		//				0, c_white, 1);
+			
+		//draw the first line
+		draw_sprite_ext(sPlayerWeapons, 0, _weapon_ui_x, _weapon_ui_y, _x_scale, _y_scale, 0, c_white, 1);
 		
+		var _text_x_offset = 5;
+		var _text_y_offset = 10;
 		// draw weapons sprites for ui
 		for(var _i = 0; _i < array_length(_player_weapons); _i++)
 		{	
-			var _weapon_sprite = _player_weapons[_i].ui_sprite;
+			var _weapon = _player_weapons[_i];
+			var _weapon_sprite = _weapon.ui_sprite;
+			var _text_location = _weapon_ui_y + sprite_get_height(_weapon_sprite) * _y_scale - _text_y_offset;
 			
 			// Calculate the offset for this weapon, adding some spacing
-			var _current_offset = _weapon_sprite_offset * _x_scale; //+ (_i * 5);
-    
+			var _current_offset = _weapon_sprite_offset * _x_scale;
+			
 			draw_sprite_ext(_weapon_sprite,
 							0,
 							_weapon_ui_x + _current_offset,
@@ -147,7 +146,9 @@ if (instance_exists(oPlayer))
 							_x_scale,
 							_y_scale,
 							0, c_white, 1);
-							
+			//draw text of the weapon selection 1, 2, 3
+			draw_text(_weapon_ui_x + _current_offset + _text_x_offset, _text_location, string(_i+ 1));
+			
 			// Update the offset for the next weapon
 			_weapon_sprite_offset += sprite_get_width(_weapon_sprite);
 		}
