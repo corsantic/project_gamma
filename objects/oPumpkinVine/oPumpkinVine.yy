@@ -1,21 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"oPumpkinBullet",
+  "%Name":"oPumpkinVine",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oPumpkinBullet",
+  "name":"oPumpkinVine",
   "overriddenProperties":[],
   "parent":{
     "name":"Pumpkin",
     "path":"folders/Enemies/Pumpkin.yy",
   },
-  "parentObjectId":{
-    "name":"oDamagePlayer",
-    "path":"objects/oDamagePlayer/oDamagePlayer.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPumpkinBullet",
-    "path":"sprites/sPumpkinBullet/sPumpkinBullet.yy",
+    "name":"sPumpkinVine",
+    "path":"sprites/sPumpkinVine/sPumpkinVine.yy",
   },
   "spriteMaskId":null,
   "visible":true,
