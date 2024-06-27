@@ -78,60 +78,60 @@ switch(state)
 	#endregion
 	break;
 	
-	case ENEMY_STATE.PAUSE_AND_SHOOT:
-		#region pause and shot
-		//pause enemy
-			//direction
-			if(instance_exists(oPlayer))
-			{
-				dir = point_direction(x, y, oPlayer.x, oPlayer.y);
-			}
+	//case ENEMY_STATE.PAUSE_AND_SHOOT:
+	//	#region pause and shot
+	//	//pause enemy
+	//		//direction
+	//		if(instance_exists(oPlayer))
+	//		{
+	//			dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+	//		}
 			
-			//set the correct speed
-            spd = 0;
+	//		//set the correct speed
+    //        spd = 0;
 			
-			//stop animating / manually set the image index
-			image_index = 0;
+	//		//stop animating / manually set the image index
+	//		image_index = 0;
 			
-			//shoot a bullet
-				shoot_timer++;
-				var _bullet_x = x + bullet_x_offset;
-				var _bullet_y = y + bullet_y_offset;
-				//create bullet
-				if(shoot_timer == 1)
-				{
+	//		//shoot a bullet
+	//			shoot_timer++;
+	//			var _bullet_x = x + bullet_x_offset;
+	//			var _bullet_y = y + bullet_y_offset;
+	//			//create bullet
+	//			if(shoot_timer == 1)
+	//			{
 					
-					bullet_instance = instance_create_depth(_bullet_x,
-										_bullet_y,
-										depth,
-										oPumpkinBullet);
-				}
+	//				bullet_instance = instance_create_depth(_bullet_x,
+	//									_bullet_y,
+	//									depth,
+	//									oPumpkinBullet);
+	//			}
 				
-				if(	shoot_timer <= windup_time
-					&& instance_exists(bullet_instance))
-				{
-					bullet_instance.x = _bullet_x;
-					bullet_instance.y = _bullet_y;
-				}
+	//			if(	shoot_timer <= windup_time
+	//				&& instance_exists(bullet_instance))
+	//			{
+	//				bullet_instance.x = _bullet_x;
+	//				bullet_instance.y = _bullet_y;
+	//			}
 				
 				
-				//shoot the bullet after the windup time is over
-				if(	shoot_timer == windup_time 
-					&& instance_exists(bullet_instance))
-				{
-					//set out bullet's state to shooting state
-					bullet_instance.state = BULLET_STATE.SHOOTING;
-				}
-				//recover and return to chasing player
-				if (shoot_timer > windup_time + recover_time)
-				{
-					// go back to chasing player
-					state = ENEMY_STATE.CHASING;
-					//reset the timer so we can use it again					
-					shoot_timer = 0;
-				}
-		#endregion
-	break;
+	//			//shoot the bullet after the windup time is over
+	//			if(	shoot_timer == windup_time 
+	//				&& instance_exists(bullet_instance))
+	//			{
+	//				//set out bullet's state to shooting state
+	//				bullet_instance.state = BULLET_STATE.SHOOTING;
+	//			}
+	//			//recover and return to chasing player
+	//			if (shoot_timer > windup_time + recover_time)
+	//			{
+	//				// go back to chasing player
+	//				state = ENEMY_STATE.CHASING;
+	//				//reset the timer so we can use it again					
+	//				shoot_timer = 0;
+	//			}
+	//	#endregion
+	//break;
 	
 	
 	case ENEMY_STATE.DEATH:

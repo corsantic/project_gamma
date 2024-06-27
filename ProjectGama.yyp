@@ -163,6 +163,7 @@
     {"id":{"name":"sPlayerUpRun","path":"sprites/sPlayerUpRun/sPlayerUpRun.yy",},},
     {"id":{"name":"sPlayerWarpTarget","path":"sprites/sPlayerWarpTarget/sPlayerWarpTarget.yy",},},
     {"id":{"name":"sPlayerWeapons","path":"sprites/sPlayerWeapons/sPlayerWeapons.yy",},},
+    {"id":{"name":"sPumpkinAttack","path":"sprites/sPumpkinAttack/sPumpkinAttack.yy",},},
     {"id":{"name":"sPumpkinBomb","path":"sprites/sPumpkinBomb/sPumpkinBomb.yy",},},
     {"id":{"name":"sPumpkinDown","path":"sprites/sPumpkinDown/sPumpkinDown.yy",},},
     {"id":{"name":"sPumpkinLeft","path":"sprites/sPumpkinLeft/sPumpkinLeft.yy",},},
