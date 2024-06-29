@@ -9,7 +9,6 @@ if(delay > 0)
 	exit;
 }
 
-
 //create damage object
 if(floor(image_index) == attack_frame && !instance_exists(damage_object))
 {
@@ -19,7 +18,6 @@ if(floor(image_index) == attack_frame && !instance_exists(damage_object))
 		mask_index = other.sprite_index;
 		damage = other.damage;
 		visible = false;
-	
 	}
 }
 
@@ -32,10 +30,8 @@ if (floor(image_index) > hold_frame)
 	}
 }
 
-
-
 //getting rid of the damage object
 if(floor(image_index) > hold_frame && instance_exists(damage_object))
 {
-	instance_destroy();
+	instance_destroy(damage_object);
 }

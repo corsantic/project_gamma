@@ -1,4 +1,5 @@
 depth = -y;
+
 damage_object = noone;
 attack_frame = 7;
 hold_frame = 8;
