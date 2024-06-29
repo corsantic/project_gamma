@@ -6,35 +6,36 @@ if(_is_screen_paused) exit;
 var _wall_collisions = true;
 var _enemy_collisions = true;
 var _get_damage = true;
+var _auto_sprites = true;
 
 //state machine
 switch(state)
 {
 	case ENEMY_STATE.SPAWN:
-		#region spawn state of skeletons
-		//fade in
-		if(image_alpha < 1)
-		{
-			//don't walk while fading in
-			spd = 0;
-			image_alpha += fade_speed;
-		}
+		#region spawn state 
+			//fade in
+			if(image_alpha < 1)
+			{
+				//don't walk while fading in
+				spd = 0;
+				image_alpha += fade_speed;
+			}
 		
-		//walk out
-		_wall_collisions = false;
-		_get_damage = false;
-		if (image_alpha >= 1)
-		{
-			//set the right speed
-			spd = emerge_speed;
-			dir = 270; //straight down
-		}
+			//walk out
+			_wall_collisions = false;
+			_get_damage = false;
+			if (image_alpha >= 1)
+			{
+				//set the right speed
+				spd = emerge_speed;
+				dir = 270; //straight down
+			}
 		
-		//switch to the chasing state
-		if(!place_meeting(x, y ,oWall))
-		{
-			state = ENEMY_STATE.CHASING;
-		}
+			//switch to the chasing state
+			if(!place_meeting(x, y ,oWall))
+			{
+				state = ENEMY_STATE.CHASING;
+			}
 	#endregion
 	break;
 	
@@ -78,60 +79,70 @@ switch(state)
 	#endregion
 	break;
 	
-	//case ENEMY_STATE.PAUSE_AND_SHOOT:
-	//	#region pause and shot
-	//	//pause enemy
-	//		//direction
-	//		if(instance_exists(oPlayer))
-	//		{
-	//			dir = point_direction(x, y, oPlayer.x, oPlayer.y);
-	//		}
+	case ENEMY_STATE.PAUSE_AND_SHOOT:
+		#region pause and shot
+		//pause enemy
+			//direction
+			if(instance_exists(oPlayer))
+			{
+				dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+			}
 			
-	//		//set the correct speed
-    //        spd = 0;
+			//set the correct speed
+            spd = 0;
+			var _is_attack_sprite = sprite_index == sPumpkinAttack ;
+			var _floor_image_index = floor(image_index);
+			_auto_sprites = false;
+			//start the attack animation
+			if (!_is_attack_sprite)
+			{
+				sprite_index = sPumpkinAttack;
+				image_index = 0;
+			}
 			
-	//		//stop animating / manually set the image index
-	//		image_index = 0;
-			
-	//		//shoot a bullet
-	//			shoot_timer++;
-	//			var _bullet_x = x + bullet_x_offset;
-	//			var _bullet_y = y + bullet_y_offset;
-	//			//create bullet
-	//			if(shoot_timer == 1)
-	//			{
+			//create attack object
+			if(	_is_attack_sprite
+				&& _floor_image_index == attack_frame 
+				&& !attack_triggered)
+			{
+				attack_triggered = true;
+				
+				var _attack_distance = 200;
+				var _attack_seperation = 20;
+				var _attack_number  = round(_attack_distance / _attack_seperation);
+				
+				for (var _i = 0; _i < _attack_number; _i++)
+				{
+					var _xx = x + lengthdir_x(_attack_seperation*_i, dir);
+					var _yy = y + lengthdir_y(_attack_seperation*_i, dir);
 					
-	//				bullet_instance = instance_create_depth(_bullet_x,
-	//									_bullet_y,
-	//									depth,
-	//									oPumpkinBullet);
-	//			}
-				
-	//			if(	shoot_timer <= windup_time
-	//				&& instance_exists(bullet_instance))
-	//			{
-	//				bullet_instance.x = _bullet_x;
-	//				bullet_instance.y = _bullet_y;
-	//			}
-				
-				
-	//			//shoot the bullet after the windup time is over
-	//			if(	shoot_timer == windup_time 
-	//				&& instance_exists(bullet_instance))
-	//			{
-	//				//set out bullet's state to shooting state
-	//				bullet_instance.state = BULLET_STATE.SHOOTING;
-	//			}
-	//			//recover and return to chasing player
-	//			if (shoot_timer > windup_time + recover_time)
-	//			{
-	//				// go back to chasing player
-	//				state = ENEMY_STATE.CHASING;
-	//				//reset the timer so we can use it again					
-	//				shoot_timer = 0;
-	//			}
-	//	#endregion
-	//break;
+					if(!position_meeting(_xx, _yy, oWall))
+					{
+						var _vine_instance = instance_create_depth(_xx, _yy, depth, oPumpkinVine);
+						with(_vine_instance)
+						{
+							delay = _i*3;
+						}
+					}
+					else
+					{
+						break;
+					}
+				}
+			}
+			//hold the animation
+			if (_is_attack_sprite && _floor_image_index == hold_frame)
+			{
+				hold_timer--;
+				if(hold_timer > 0)
+				{
+					image_index = hold_frame;
+				}
+			}
+
+			
+		#endregion
+	break;
 	
 	
 	case ENEMY_STATE.DEATH:
@@ -169,6 +180,13 @@ switch(state)
 	
 }
 
+//reset the attack variable
+if(sprite_index != sPumpkinAttack) 
+{
+	attack_triggered = false;
+	hold_timer = hold_time;
+}
+
 
 #region chase the player
 
@@ -177,9 +195,13 @@ switch(state)
 		y_speed = lengthdir_y(spd, dir);
 	
 	//get the correct sprite
+	if(_auto_sprites)
+	{
 		face = round(dir / degree); 
 		if face == DIRECTION.OUT { face = DIRECTION.RIGHT; };
 		sprite_index = sprites[face];
+		mask_index = sprites[3];
+	}
 	//collisions
 	
 		//wall collision

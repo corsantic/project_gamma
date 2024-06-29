@@ -2,6 +2,14 @@
 var _is_screen_paused = screen_pause();
 if(_is_screen_paused) exit;
 
+if(delay > 0)
+{
+	delay--;
+	image_index = 0;
+	exit;
+}
+
+
 //create damage object
 if(floor(image_index) == attack_frame && !instance_exists(damage_object))
 {

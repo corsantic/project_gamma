@@ -5,6 +5,11 @@ event_inherited();
 sprites = [sPumpkinRight, sPumpkinUp, sPumpkinLeft, sPumpkinDown];
 degree = 90;
 face = DIRECTION.DOWN;
+attack_frame = 11;
+hold_frame = 12;
+attack_triggered = false;
+hold_time = game_get_speed(gamespeed_fps) * 1;
+hold_timer = hold_time;
 
 spd = 0;
 chase_spd = .5;
@@ -13,6 +18,8 @@ x_speed = 0;
 y_speed = 0;
 hp = 10;
 max_hp = 10;
+
+
 
 
 	//shooting state
