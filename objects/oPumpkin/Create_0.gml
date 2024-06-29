@@ -12,7 +12,7 @@ hold_time = game_get_speed(gamespeed_fps) * 1;
 hold_timer = hold_time;
 
 spd = 0;
-chase_spd = .5;
+chase_spd = .25;
 dir = 0;
 x_speed = 0;
 y_speed = 0;

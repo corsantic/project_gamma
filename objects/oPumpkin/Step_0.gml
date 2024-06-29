@@ -110,25 +110,33 @@ switch(state)
 				var _attack_distance = 200;
 				var _attack_seperation = 20;
 				var _attack_number  = round(_attack_distance / _attack_seperation);
+				var _attack_dir_seperation = 15;
 				
-				for (var _i = 0; _i < _attack_number; _i++)
+				for (var _ds = 0; _ds < 3; _ds++)
 				{
-					var _xx = x + lengthdir_x(_attack_seperation*_i, dir);
-					var _yy = y + lengthdir_y(_attack_seperation*_i, dir);
-					
-					if(!position_meeting(_xx, _yy, oWall))
+					var _dir  = dir - _attack_dir_seperation + _attack_dir_seperation * _ds;	
+					for (var _i = 0; _i < _attack_number; _i++)
 					{
-						var _vine_instance = instance_create_depth(_xx, _yy, depth, oPumpkinVine);
-						with(_vine_instance)
+				
+						var _xx = x + lengthdir_x(_attack_seperation*_i, _dir);
+						var _yy = y + lengthdir_y(_attack_seperation*_i, _dir);
+					
+						if(!position_meeting(_xx, _yy, oWall))
 						{
-							delay = _i*3;
+							var _vine_instance = instance_create_depth(_xx, _yy, depth, oPumpkinVine);
+							with(_vine_instance)
+							{
+								delay = _i*3;
+							}
+						}
+						else
+						{
+							break;
 						}
 					}
-					else
-					{
-						break;
-					}
+				
 				}
+			
 			}
 			//hold the animation
 			if (_is_attack_sprite && _floor_image_index == hold_frame)
