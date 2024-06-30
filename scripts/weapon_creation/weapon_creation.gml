@@ -32,7 +32,7 @@ constructor
 /// @constructor CreateMeleeWeapon()
 function CreateMeleeWeapon(	_sprite = sSword,
 							_weapon_length = 0,
-							_damage = 10,
+							_damage = 2,
 							_cooldown = 15,
 							_pickup_sprite = sSwordPickup,
 							_sound_effect = sfxPistolShot,
@@ -101,10 +101,10 @@ global.WeaponList = {
 		sAk47HUD
 		),
 	sword: new CreateMeleeWeapon(
-        sSwordAttack, // Replace with your melee weapon sprite
-        sprite_get_bbox_right(sSwordAttack) - sprite_get_xoffset(sSwordAttack), // Length of the melee weapon
-        10, // Damage of the melee weapon
-        15, // Cooldown for melee attack
+        sSword, // Replace with your melee weapon sprite
+        sprite_get_bbox_right(sSword) - sprite_get_xoffset(sSword), // Length of the melee weapon
+        2, // Damage of the melee weapon
+        20, // Cooldown for melee attack
         sSwordPickup, // Replace with your melee weapon pickup sprite
         sfxPistolShot, // Replace with your melee weapon sound effect
         sSwordHUD, // Replace with your melee weapon HUD sprite

@@ -199,9 +199,11 @@ switch(weapon.type)
 	case WEAPON_TYPE.MELEE:
 	{
 
-		var _melee_attack_ready_and_pressed = _shoot_key;
-		if(_melee_attack_ready_and_pressed && !is_melee_attacking)
+		if(_is_shoot_ready_and_pressed && !is_melee_attacking)
 		{
+			//reset the timer
+			shoot_timer = weapon.cooldown;
+			
 			is_melee_attacking = true;
 			var _weapon_net_length = weapon.length + weapon_offset_distance;
 			var _x_offset = lengthdir_x(_weapon_net_length, aim_direction);
@@ -210,8 +212,9 @@ switch(weapon.type)
 			
 			with(_hitbox)
 			{
-				sprite_index = sSwordAttack;
+				sprite_index = sSword;
 				image_xscale = other.image_xscale;
+				damage = other.weapon.damage;
 			}
 		}
 		
