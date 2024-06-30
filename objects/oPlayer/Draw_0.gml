@@ -1,7 +1,7 @@
 //draw the weapon behind the player
 	if(aim_direction >= 0 && aim_direction < 180)
 	{
-		draw_player_weapon();
+		draw_player_weapon(attack_frame);
 	}
 
 
@@ -12,7 +12,7 @@
 //draw the weapon
 	if(aim_direction >= 135 && aim_direction < 360)
 	{
-		draw_player_weapon();
+		draw_player_weapon(attack_frame);
 	}
 //draw hp as number
 	

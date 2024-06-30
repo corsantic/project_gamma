@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Bullets",
-    "path":"folders/Guns/Bullets.yy",
+    "path":"folders/Weapons/Bullets.yy",
   },
   "parentObjectId":{
     "name":"oMainPellet",

@@ -48,5 +48,13 @@ enum DIRECTION
 	OUT
 }
 
+enum WEAPON_TYPE
+{
+	RANGED,
+	MELEE
+	
+	
+}
+
 
 

@@ -11,6 +11,9 @@ switch(floor(image_index))
 	case 2:
 		weapon = global.WeaponList.ak47;
 	break;
+	case 3:
+		weapon = global.WeaponList.sword;
+	break;
 }
 
 

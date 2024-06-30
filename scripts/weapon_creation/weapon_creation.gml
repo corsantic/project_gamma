@@ -10,9 +10,11 @@ function CreateWeapon(	_sprite = sPistol,
 						_flash_sprite = sShootFlash,
 						_sound_effect = sfxShotgunShot,
 						_ammo = new AmmoCreation(10, 0, 30, 50, false, 10),
-						_ui_sprite = sShotgunHUD) 
+						_ui_sprite = sShotgunHUD
+						)
 constructor
 {
+	type = WEAPON_TYPE.RANGED;
 	sprite = _sprite;
 	length = _weapon_length;
 	bullet = _bullet_object;
@@ -25,7 +27,29 @@ constructor
     sound_effect = _sound_effect;
 	ammo = _ammo;
 	ui_sprite = _ui_sprite;
-	
+}
+
+/// @constructor CreateMeleeWeapon()
+function CreateMeleeWeapon(	_sprite = sSword,
+							_weapon_length = 0,
+							_damage = 10,
+							_cooldown = 15,
+							_pickup_sprite = sSwordPickup,
+							_sound_effect = sfxPistolShot,
+							_ui_sprite = sSwordHUD,
+							_attack_speed = 0.2
+							)
+constructor
+{
+	type = WEAPON_TYPE.MELEE;
+	sprite = _sprite;
+	length = _weapon_length;
+	damage = _damage;
+	cooldown = _cooldown;
+	pickup_sprite = _pickup_sprite;
+	sound_effect = _sound_effect;
+	ui_sprite = _ui_sprite;
+	attack_speed = _attack_speed;
 }
 
 // the player's weapon inventory
@@ -75,7 +99,17 @@ global.WeaponList = {
 		sfxAk47Shot,
 		new AmmoCreation(30, 60, 30, 150, false, 15, 30),
 		sAk47HUD
-		)
+		),
+	sword: new CreateMeleeWeapon(
+        sSwordAttack, // Replace with your melee weapon sprite
+        sprite_get_bbox_right(sSwordAttack) - sprite_get_xoffset(sSwordAttack), // Length of the melee weapon
+        10, // Damage of the melee weapon
+        15, // Cooldown for melee attack
+        sSwordPickup, // Replace with your melee weapon pickup sprite
+        sfxPistolShot, // Replace with your melee weapon sound effect
+        sSwordHUD, // Replace with your melee weapon HUD sprite
+		0.15 // attack speed
+    )
 
 }
 	

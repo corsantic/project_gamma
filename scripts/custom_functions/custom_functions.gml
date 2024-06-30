@@ -1,6 +1,6 @@
 /// @function							draw_player_weapon(_weapon)
 
-function draw_player_weapon()
+function draw_player_weapon(_attack_frame = 0)
 {
 	//get the weapon of the player's body
 	var _x_offset = lengthdir_x(weapon_offset_distance, aim_direction);
@@ -13,7 +13,7 @@ function draw_player_weapon()
 	{
 		_weapon_y_scale = -1;
 	}
-	draw_sprite_ext(weapon.sprite, 0,
+	draw_sprite_ext(weapon.sprite, _attack_frame,
 					center_x + _x_offset,
 					center_y +_y_offset,
 					1,

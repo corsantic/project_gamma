@@ -72,7 +72,7 @@ if(_is_screen_paused) exit;
 
 #endregion
 #region weapon swapping
-	var _playerWeapons = global.PlayerWeapons;
+	var _player_weapons = global.PlayerWeapons;
 	var _weapon_selected_key = global.weapon_selected_key;
 	
 	//cycle through weapons
@@ -93,9 +93,9 @@ if(_is_screen_paused) exit;
 		{
 			if(selected_weapon < 0)
 			{	
-				selected_weapon = array_length(_playerWeapons) - 1;
+				selected_weapon = array_length(_player_weapons) - 1;
 			}
-			if(selected_weapon >= array_length(_playerWeapons)) 
+			if(selected_weapon >= array_length(_player_weapons)) 
 			{ 
 				selected_weapon = 0;
 			}
@@ -104,94 +104,136 @@ if(_is_screen_paused) exit;
 	}
 	
 	//set the new weapon
-	weapon = _playerWeapons[selected_weapon];
+	weapon = _player_weapons[selected_weapon];
 	
 
 #endregion
-#region reload
-if (reload_cancel) {
-    alarm[0] = -1; // Cancel the reload alarm
-    is_reloading = false;
-    stop_sfx(sfxReload);
-    reload_cancel = false;
-} else {
-    if ((_reload_key_pressed || weapon.ammo.is_magazine_empty()) 
-		&& weapon.ammo.spare_count > 0 
-		&& alarm[0] == -1 
-		&& !is_reloading) {
-        alarm[0] = weapon.ammo.reload_time; // Set the alarm to the reload time
-        play_sfx(sfxReload, true);
-        is_reloading = true;
-    }
-}
-
-#endregion
-#region shoot the weapon
 if(shoot_timer > 0) { shoot_timer--; }
 var _is_shoot_ready_and_pressed = _shoot_key && shoot_timer <= 0;
 
-
-if(_is_shoot_ready_and_pressed && !is_reloading && !weapon.ammo.is_magazine_empty())
+//check for ranged weapon
+switch(weapon.type)
 {
-	//reset the timer
-	shoot_timer = weapon.cooldown;
-	//shoot and substract ammo
-	weapon.ammo.shoot();
-
-	//camera shake
-	camera_shake(weapon.shake);
-	
-	//shooting
-		//create the bullet
-		var _weapon_net_length = weapon.length + weapon_offset_distance;
-		var _x_offset = lengthdir_x(_weapon_net_length, aim_direction);
-		var _y_offset = lengthdir_y(_weapon_net_length, aim_direction);
-		
-		var _spread = weapon.spread;
-		var _spread_div = _spread / max(weapon.bullet_num - 1, 1);
-		
-		var _weapon_tip_x = center_x + _x_offset;
-		var _weapon_tip_y = center_y + _y_offset;
-		
-		//play sound effect
-		ds_list_add(oSFX.sfx_list, new CreateSFX(weapon.sound_effect));
-		
-		//create weapon flash
-		create_animated_vfx(weapon.flash_sprite,
-							_weapon_tip_x,
-							_weapon_tip_y,
-							depth - 10,
-							aim_direction);
-		
-		
-		//create the correct number of bullets
-		for(var _i = 0; _i < weapon.bullet_num; _i++)
-		{
-			
-			var _bullet_instance = instance_create_depth(_weapon_tip_x, _weapon_tip_y,
-														depth, weapon.bullet);
-	
-			//change the bullet's direction
-			with(_bullet_instance)
-			{
-				dir = other.aim_direction - _spread/2 + _spread_div*_i;		
-				
-				// turn the bullet to correct direction at creation if necessary
-				if(dir_fix == true){ image_angle = dir; }
+	case WEAPON_TYPE.RANGED:
+	{
+		#region reload
+			if (reload_cancel) {
+			    alarm[0] = -1; // Cancel the reload alarm
+			    is_reloading = false;
+			    stop_sfx(sfxReload);
+			    reload_cancel = false;
+			} else {
+			    if ((_reload_key_pressed || weapon.ammo.is_magazine_empty()) 
+					&& weapon.ammo.spare_count > 0 
+					&& alarm[0] == -1 
+					&& !is_reloading) {
+			        alarm[0] = weapon.ammo.reload_time; // Set the alarm to the reload time
+			        play_sfx(sfxReload, true);
+			        is_reloading = true;
+			    }
 			}
+
+		#endregion
+ 		#region shoot the weapon if not melee
+
+
+			if(_is_shoot_ready_and_pressed && !is_reloading && !weapon.ammo.is_magazine_empty())
+			{
+				//reset the timer
+				shoot_timer = weapon.cooldown;
+				//shoot and substract ammo
+				weapon.ammo.shoot();
+
+				//camera shake
+				camera_shake(weapon.shake);
+	
+				//shooting
+					//create the bullet
+					var _weapon_net_length = weapon.length + weapon_offset_distance;
+					var _x_offset = lengthdir_x(_weapon_net_length, aim_direction);
+					var _y_offset = lengthdir_y(_weapon_net_length, aim_direction);
+		
+					var _spread = weapon.spread;
+					var _spread_div = _spread / max(weapon.bullet_num - 1, 1);
+		
+					var _weapon_tip_x = center_x + _x_offset;
+					var _weapon_tip_y = center_y + _y_offset;
+		
+					//play sound effect
+					ds_list_add(oSFX.sfx_list, new CreateSFX(weapon.sound_effect));
+		
+					//create weapon flash
+					create_animated_vfx(weapon.flash_sprite,
+										_weapon_tip_x,
+										_weapon_tip_y,
+										depth - 10,
+										aim_direction);
+		
+		
+					//create the correct number of bullets
+					for(var _i = 0; _i < weapon.bullet_num; _i++)
+					{
 			
+						var _bullet_instance = instance_create_depth(_weapon_tip_x, _weapon_tip_y,
+																	depth, weapon.bullet);
+	
+						//change the bullet's direction
+						with(_bullet_instance)
+						{
+							dir = other.aim_direction - _spread/2 + _spread_div*_i;		
+				
+							// turn the bullet to correct direction at creation if necessary
+							if(dir_fix == true){ image_angle = dir; }
+						}
+			
+					}
+			}
+			else if (_is_shoot_ready_and_pressed && weapon.ammo.is_magazine_empty() && !is_reloading)
+			{
+				//play empty magazine
+				alarm[1] = 2;
+			}
+		#endregion
+		break;
+	}
+	case WEAPON_TYPE.MELEE:
+	{
+
+		var _melee_attack_ready_and_pressed = _shoot_key;
+		if(_melee_attack_ready_and_pressed && !is_melee_attacking)
+		{
+			is_melee_attacking = true;
+			var _weapon_net_length = weapon.length + weapon_offset_distance;
+			var _x_offset = lengthdir_x(_weapon_net_length, aim_direction);
+			var _y_offset = lengthdir_y(_weapon_net_length, aim_direction);
+			var _hitbox = instance_create_depth(x + _x_offset, y + _y_offset, depth, oHitBox);
+			
+			with(_hitbox)
+			{
+				sprite_index = sSwordAttack;
+				image_xscale = other.image_xscale;
+			}
 		}
+		
+		if(is_melee_attacking)
+		{
+			melee_attack_timer += weapon.attack_speed;
+			if (melee_attack_timer >= 1) {
+		        attack_frame++;
+		        melee_attack_timer = 0; // Reset the timer
+		    }
+
+		    var _sprite_numbers = sprite_get_number(weapon.sprite);
+		    if (attack_frame >= _sprite_numbers) {
+		        attack_frame = 0;
+		        is_melee_attacking = false;
+		    }
+		}
+
+		break;
+	}
 }
-else if (_is_shoot_ready_and_pressed && weapon.ammo.is_magazine_empty() && !is_reloading)
-{
-	//play empty magazine
-	alarm[1] = 2;
-}
 
-
-
-
-#endregion
 #region death / gameover
 	if(hp <= 0)
 	{	

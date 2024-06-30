@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"sWeaponPickup",
   "bboxMode":0,
-  "bbox_bottom":13,
+  "bbox_bottom":17,
   "bbox_left":0,
   "bbox_right":29,
   "bbox_top":0,
@@ -15,10 +15,11 @@
     {"$GMSpriteFrame":"","%Name":"7b50d17d-3018-45f9-abae-b85f4b4bb78a","name":"7b50d17d-3018-45f9-abae-b85f4b4bb78a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"d433a6e9-9079-405a-a3ed-bbe6cef8839a","name":"d433a6e9-9079-405a-a3ed-bbe6cef8839a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"17481cdc-eba9-4575-ac80-e0b4ff5acf40","name":"17481cdc-eba9-4575-ac80-e0b4ff5acf40","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"4e08643c-0d90-4bc3-b1c4-174ef85ca97a","name":"4e08643c-0d90-4bc3-b1c4-174ef85ca97a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":14,
+  "height":18,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"f3153880-862a-4a2f-b33f-c6ec003c0476","blendMode":0,"displayName":"default","isLocked":false,"name":"f3153880-862a-4a2f-b33f-c6ec003c0476","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -51,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":3.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -79,6 +80,9 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"17481cdc-eba9-4575-ac80-e0b4ff5acf40","path":"sprites/sWeaponPickup/sWeaponPickup.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"227ffc93-9a19-4233-a8e3-1307f4097bb3","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4e08643c-0d90-4bc3-b1c4-174ef85ca97a","path":"sprites/sWeaponPickup/sWeaponPickup.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"186e071c-587d-4754-8df6-81e83ad3c22a","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

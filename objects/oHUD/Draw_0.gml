@@ -47,45 +47,30 @@ if (instance_exists(oPlayer))
 
 	#endregion
 	
-	#region draw the ammo count
-		//if we want to top left open these
-		//var _ammo_count_offset = sprite_get_height(sEnemyCountHUD) + 4
-		//var _ammo_hud_x = _hud_x;
-		//var _ammo_hud_y = _enemy_count_hud_y + _ammo_count_offset;
-		//var _ammo_remaining = string(oPlayer.weapon.ammo.remaining_count);
-		//var _ammo_spare = string(oPlayer.weapon.ammo.spare_count);
+	if(oPlayer.weapon.type == WEAPON_TYPE.RANGED)
+	{
+		#region draw the ammo count	
+			var _offset = 16;
+			var _x_offset = _offset;
+	
+			var _ammo_hud_x = oPlayer.x + _x_offset;
+			var _ammo_hud_y = oPlayer.center_y + _offset;
+			var _ammo_remaining = string(oPlayer.weapon.ammo.remaining_count);
+			var _ammo_spare = string(oPlayer.weapon.ammo.spare_count);
 		
-		//if(oPlayer.weapon.ammo.is_infinite)
-		//{
-		//	_ammo_remaining = "-";
-		//	_ammo_spare = "-";
-		//}
+			if(oPlayer.weapon.ammo.is_infinite)
+			{
+				_ammo_remaining = "-";
+				_ammo_spare = "-";
+			}
 		
-		//draw_text(_ammo_hud_x + 19, _ammo_hud_y + 3, _ammo_remaining);
-		//draw_text(_ammo_hud_x + 37, _ammo_hud_y + 3, + "/" + _ammo_spare);
-		//
-		var _offset = 16;
-		var _x_offset = _offset;
-		//if(oPlayer.aim_direction < 360 && oPlayer.aim_direction > 270)
-		//{
-		//	_x_offset = -_x_offset;
-		//}
-		var _ammo_hud_x = oPlayer.x + _x_offset;
-		var _ammo_hud_y = oPlayer.center_y + _offset;
-		var _ammo_remaining = string(oPlayer.weapon.ammo.remaining_count);
-		var _ammo_spare = string(oPlayer.weapon.ammo.spare_count);
-		
-		if(oPlayer.weapon.ammo.is_infinite)
-		{
-			_ammo_remaining = "-";
-			_ammo_spare = "-";
-		}
-		
-		draw_text(_ammo_hud_x, _ammo_hud_y, _ammo_remaining);
-		draw_text(_ammo_hud_x + 20, _ammo_hud_y, + "/" + _ammo_spare);
+			draw_text(_ammo_hud_x, _ammo_hud_y, _ammo_remaining);
+			draw_text(_ammo_hud_x + 20, _ammo_hud_y, + "/" + _ammo_spare);
 	
 	
-	#endregion
+		#endregion
+	
+	}
 	
 	#region draw weapons to ui
 		var _x_scale = 2;

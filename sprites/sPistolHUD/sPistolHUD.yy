@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"HUD",
-    "path":"folders/Guns/HUD.yy",
+    "path":"folders/Weapons/HUD.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

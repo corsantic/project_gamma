@@ -38,7 +38,9 @@
 
 //weapon info
 	shoot_timer = 0;
-	
+	attack_frame = 0;
+	is_melee_attacking = false;
+	melee_attack_timer = 0;
 	//add weapon to player weapon inv
 	array_push(global.PlayerWeapons, global.WeaponList.pistol);
 
