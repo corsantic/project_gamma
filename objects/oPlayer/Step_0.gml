@@ -241,12 +241,10 @@ switch(weapon.type)
 	if(hp <= 0)
 	{	
 		//create the game over
-		instance_create_depth(0, 0, -10000,oGameOverScreen);
+		instance_create_depth(0, 0, -10000, oGameOverScreen);
 		
 		//boom vfx
 		create_animated_vfx(sSmallBoom, x, y, depth);
-		
-		
 		
 		//destroy ourself
 		instance_destroy();
