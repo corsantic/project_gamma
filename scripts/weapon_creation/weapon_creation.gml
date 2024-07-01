@@ -112,5 +112,11 @@ global.WeaponList = {
     )
 
 }
+
+global.WeaponDropImageIndexArray = [1, 2];
 	
-	
+function get_random_weapon_drop(){
+	var _random_index = irandom_range(0, array_length(global.WeaponDropImageIndexArray) - 1);
+	var _selected_weapon_number = global.WeaponDropImageIndexArray[_random_index];
+	return _selected_weapon_number;
+}

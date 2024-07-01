@@ -160,7 +160,8 @@ switch(state)
 					var _instance = instance_create_depth(x, y, depth, oWeaponPickup);
 					with(_instance)
 					{
-						image_index = irandom_range(1, image_number - 1);
+						// Select a random index from the array
+						image_index =  get_random_weapon_drop();
 					}
 				}
 				//boom vfx
