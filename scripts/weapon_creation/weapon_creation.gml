@@ -27,6 +27,7 @@ constructor
     sound_effect = _sound_effect;
 	ammo = _ammo;
 	ui_sprite = _ui_sprite;
+	
 }
 
 /// @constructor CreateMeleeWeapon()
@@ -70,6 +71,7 @@ global.WeaponList = {
 		sfxPistolShot,
 		new AmmoCreation(0, 0, 0, 0, true, 0, 0),
 		sPistolHUD
+
 	),
 	shotgun: new CreateWeapon(
 		sShotgun,
@@ -114,7 +116,8 @@ global.WeaponList = {
 }
 
 global.WeaponDropImageIndexArray = [1, 2];
-	
+
+
 function get_random_weapon_drop(){
 	var _random_index = irandom_range(0, array_length(global.WeaponDropImageIndexArray) - 1);
 	var _selected_weapon_number = global.WeaponDropImageIndexArray[_random_index];
