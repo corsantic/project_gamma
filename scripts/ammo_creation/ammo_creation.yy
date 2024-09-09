@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ammo_creation",
   "isCompatibility":false,
   "isDnD":false,

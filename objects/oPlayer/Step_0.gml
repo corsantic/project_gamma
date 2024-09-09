@@ -14,7 +14,7 @@ if(instance_exists(oWarp))
 {
 	image_index = 0;
 	sprite_index = sprites_idle[face];
-	aim_direction = face * _degree;
+	aim_direction = face * degree;
 	center_y = y + center_y_offset;
 	
 }

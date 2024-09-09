@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"custom_sfx_functions",
   "isCompatibility":false,
   "isDnD":false,

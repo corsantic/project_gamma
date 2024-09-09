@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"custom_vfx_functions",
   "isCompatibility":false,
   "isDnD":false,
